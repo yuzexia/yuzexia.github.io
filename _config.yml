@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
+title: 前端小菜鸟
+subtitle: 
+description: "前端, JavaScript, Html, Css"
+author: yuzexia
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://yuzexia.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,11 +63,15 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+# default theme
+# theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/yuzexia/yuzexia.github.io.git
+  repo: git@github.com:yuzexia/yuzexia.github.io.git
   branch: master
+
+
