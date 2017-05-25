@@ -1,0 +1,768 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。 location对象很特别，它既是window对象的属性，又是document对象的属性。 1window.location === document.location  //true  location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Location-Object">
+<meta property="og:url" content="http://yuzexia.github.io/2017/05/09/Location-Object/index.html">
+<meta property="og:site_name" content="前端小菜鸟">
+<meta property="og:description" content="它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。 location对象很特别，它既是window对象的属性，又是document对象的属性。 1window.location === document.location  //true  location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。">
+<meta property="og:updated_time" content="2017-05-09T07:52:01.274Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Location-Object">
+<meta name="twitter:description" content="它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。 location对象很特别，它既是window对象的属性，又是document对象的属性。 1window.location === document.location  //true  location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yuzexia.github.io/2017/05/09/Location-Object/"/>
+
+
+
+
+
+  <title>Location-Object | 前端小菜鸟</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">前端小菜鸟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yuzexia.github.io/2017/05/09/Location-Object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yuzexia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端小菜鸟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Location-Object</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-09T15:49:34+08:00">
+                2017-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。</li>
+<li><p><code>location</code>对象很特别，它既是<code>window</code>对象的属性，又是<code>document</code>对象的属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.location === document.location  //true</div></pre></td></tr></table></figure>
+</li>
+<li><p>location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。</p>
+</li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<p>属性</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hash</td>
+<td>“#contents”</td>
+<td>返回URL中hash(#号后跟零或多个字符)，如果URL中不包含散列，则返回空字符串</td>
+</tr>
+<tr>
+<td>host</td>
+<td>“www.qxy.com:80”</td>
+<td>返回服务器名称和端口号（如果有）</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>“www.qxy.com”</td>
+<td>返回不带端口号的服务器名称</td>
+</tr>
+<tr>
+<td>href</td>
+<td>“<a href="http://www.qxy.com" target="_blank" rel="external">http://www.qxy.com</a>“</td>
+<td>返回当前加载页面的完整URL。而location对象的toString()方法也返回这个值</td>
+</tr>
+<tr>
+<td>pathname</td>
+<td>“/blog/“</td>
+<td>返回URL中的目录和（或）文件名</td>
+</tr>
+<tr>
+<td>port</td>
+<td>“8080”</td>
+<td>返回URL中指定的端口号。如果URL中不包含端口号，则这个属性返回空字符串</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>“http:”</td>
+<td>返回页面使用的协议。通常是http:或https:</td>
+</tr>
+<tr>
+<td>search</td>
+<td>“?q=javascript”</td>
+<td>返回URL的查询字符串。这个字符串以问号开头</td>
+</tr>
+</tbody>
+</table>
+<h4 id="查询字符串参数"><a href="#查询字符串参数" class="headerlink" title="查询字符串参数"></a>查询字符串参数</h4><p>虽然通过上面的属性可以访问到location 对象的大多数信息，但其中访问URL 包含的查询字符<br>串的属性并不方便。尽管location.search 返回从问号到URL 末尾的所有内容，但却没有办法逐个<br>访问其中的每个查询字符串参数。为此，可以像下面这样创建一个函数，用以解析查询字符串，然后返<br>回包含所有参数的一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">function getQueryStringArgs()&#123;</div><div class="line">    //取得查询字符串并去掉开头的问号</div><div class="line">    var qs = (location.search.length &gt; 0 ? location.search.substring(1) : &quot;&quot; ),</div><div class="line">        //保存数据的对象</div><div class="line">        args = &#123;&#125;,</div><div class="line">        //取得每一项</div><div class="line">        items = qs.length ? qs.split(&apos;&amp;&apos;) : [],</div><div class="line">        item = null,</div><div class="line">        name = null,</div><div class="line">        value = null,</div><div class="line">        //在for循环中使用</div><div class="line">        i = 0,</div><div class="line">        len = items.length;</div><div class="line">        </div><div class="line">    //逐个将每一项添加到args对象中</div><div class="line">    </div><div class="line">    for(i = 0;i &lt; len; i++)&#123;</div><div class="line">        item = items[i].split(&apos;:&apos;);</div><div class="line">        name = decodeURIComponent(item[0]);</div><div class="line">        value = decodeURIComponent(item[1]);</div><div class="line">        </div><div class="line">        if(name.length)&#123;</div><div class="line">            args[name] = value;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return args;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h4><p>使用location 对象可以通过很多方式来改变浏览器的位置。首先，也是最常用的方式，就是使用<br>assign()方法并为其传递一个URL，如下所示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.assign(&quot;http://www.qxy.com&quot;);</div></pre></td></tr></table></figure></p>
+<p>这样，就可以立即打开新URL 并在浏览器的历史记录中生成一条记录。如果是将<code>location.href</code><br>或<code>window.location</code> 设置为一个URL 值，也会以该值调用<code>assign()</code>方法。例如，下列两行代码与<br>显式调用<code>assign()</code>方法的效果完全一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.location = &quot;http://www.wrox.com&quot;;</div><div class="line">location.href = &quot;http://www.wrox.com&quot;;</div></pre></td></tr></table></figure></p>
+<p>在这些改变浏览器位置的方法中，最常用的是设置<code>location.href</code>属性。</p>
+<p>修改location 对象的其他属性也可以改变当前加载的页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//假设初始URL 为http://www.wrox.com/WileyCDA/</div><div class="line">//将URL 修改为&quot;http://www.wrox.com/WileyCDA/#section1&quot;</div><div class="line">location.hash = &quot;#section1&quot;;</div><div class="line">//将URL 修改为&quot;http://www.wrox.com/WileyCDA/?q=javascript&quot;</div><div class="line">location.search = &quot;?q=javascript&quot;;</div><div class="line">//将URL 修改为&quot;http://www.yahoo.com/WileyCDA/&quot;</div><div class="line">location.hostname = &quot;www.yahoo.com&quot;;</div><div class="line">//将URL 修改为&quot;http://www.yahoo.com/mydir/&quot;</div><div class="line">location.pathname = &quot;mydir&quot;;</div><div class="line">//将URL 修改为&quot;http://www.yahoo.com:8080/WileyCDA/&quot;</div><div class="line">location.port = 8080;</div></pre></td></tr></table></figure></p>
+<p>每次修改location 的属性（hash 除外），页面都会以新URL 重新加载。</p>
+<blockquote>
+<p>在IE8、Firefox 1、Safari 2+、Opera 9+和Chrome 中，修改hash 的值会在浏览<br>器的历史记录中生成一条新记录。在IE 的早期版本中，hash 属性不会在用户单击“后<br>退”和“前进”按钮时被更新，而只会在用户单击包含hash 的URL 时才会被更新。</p>
+<p>replace()方法。这个方法<br>只接受一个参数，即要导航到的URL；结果虽然会导致浏览器位置改变，但不会在历史记录中生成新记<br>录。在调用replace()方法之后，用户不能回到前一个页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeout(function () &#123;</div><div class="line">location.replace(&quot;http://www.wrox.com/&quot;);</div><div class="line">&#125;, 1000);</div></pre></td></tr></table></figure></p>
+<p>reload()，作用是重新加载当前显示的页面</p>
+</blockquote>
+<p>如果调用reload()<br>时不传递任何参数，页面就会以最有效的方式重新加载。也就是说，如果页面自上次请求以来并没有改<br>变过，页面就会从浏览器缓存中重新加载。如果要强制从服务器重新加载，则需要像下面这样为该方法<br>传递参数true。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">location.reload(); //重新加载（有可能从缓存中加载）</div><div class="line">location.reload(true); //重新加载（从服务器重新加载）</div></pre></td></tr></table></figure></p>
+<p>位于reload()调用之后的代码可能会也可能不会执行，这要取决于网络延迟或系统资源等因素。<br>为此，最好将reload()放在代码的最后一行。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="yuzexia WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="yuzexia Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/09/函数表达式/" rel="next" title="函数表达式">
+                <i class="fa fa-chevron-left"></i> 函数表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="yuzexia" />
+          <p class="site-author-name" itemprop="name">yuzexia</p>
+           
+              <p class="site-description motion-element" itemprop="description">前端, JavaScript, Html, Css</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询字符串参数"><span class="nav-number">1.</span> <span class="nav-text">查询字符串参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位置操作"><span class="nav-number">2.</span> <span class="nav-text">位置操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yuzexia</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
