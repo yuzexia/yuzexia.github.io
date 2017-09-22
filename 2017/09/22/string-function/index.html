@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="html5,contenteditable," />
+  <meta name="keywords" content="javascript,string," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="在工作中会用到textarea文本域自适应输入的内容的情况，今天我们根据HTML5的新属性contenteditable来实现这个功能。">
-<meta name="keywords" content="html5,contenteditable">
+<meta name="description" content="操作方法字符串截取sub,substing,slice 一个参数  123456789var str = &apos;what are you doing?&apos;;//参数为正数str.sub(1);        //&apos;hat are you doing?&apos;str.substring(1);  //&apos;hat are you doing?&apos;str.slice(1);      //&apos;hat are you do">
+<meta name="keywords" content="javascript,string">
 <meta property="og:type" content="article">
-<meta property="og:title" content="div模拟textarea文本域轻松实现高度自适应">
-<meta property="og:url" content="http://yuzexia.github.io/2017/08/14/contenteditable/index.html">
+<meta property="og:title" content="string-function.md">
+<meta property="og:url" content="http://yuzexia.github.io/2017/09/22/string-function/index.html">
 <meta property="og:site_name" content="前端小菜鸟">
-<meta property="og:description" content="在工作中会用到textarea文本域自适应输入的内容的情况，今天我们根据HTML5的新属性contenteditable来实现这个功能。">
-<meta property="og:updated_time" content="2017-08-15T06:26:37.212Z">
+<meta property="og:description" content="操作方法字符串截取sub,substing,slice 一个参数  123456789var str = &apos;what are you doing?&apos;;//参数为正数str.sub(1);        //&apos;hat are you doing?&apos;str.substring(1);  //&apos;hat are you doing?&apos;str.slice(1);      //&apos;hat are you do">
+<meta property="og:updated_time" content="2017-09-22T02:43:31.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="div模拟textarea文本域轻松实现高度自适应">
-<meta name="twitter:description" content="在工作中会用到textarea文本域自适应输入的内容的情况，今天我们根据HTML5的新属性contenteditable来实现这个功能。">
+<meta name="twitter:title" content="string-function.md">
+<meta name="twitter:description" content="操作方法字符串截取sub,substing,slice 一个参数  123456789var str = &apos;what are you doing?&apos;;//参数为正数str.sub(1);        //&apos;hat are you doing?&apos;str.substring(1);  //&apos;hat are you doing?&apos;str.slice(1);      //&apos;hat are you do">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yuzexia.github.io/2017/08/14/contenteditable/"/>
+  <link rel="canonical" href="http://yuzexia.github.io/2017/09/22/string-function/"/>
 
 
 
 
 
-  <title>div模拟textarea文本域轻松实现高度自适应 | 前端小菜鸟</title>
+  <title>string-function.md | 前端小菜鸟</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -253,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yuzexia.github.io/2017/08/14/contenteditable/">
+    <link itemprop="mainEntityOfPage" href="http://yuzexia.github.io/2017/09/22/string-function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yuzexia">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">div模拟textarea文本域轻松实现高度自适应</h1>
+          <h1 class="post-title" itemprop="name headline">string-function.md</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-14T11:53:07+08:00">
-                2017-08-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-22T09:58:05+08:00">
+                2017-09-22
               </time>
             
 
@@ -317,8 +317,20 @@
       
 
       
-        <blockquote>
-<p>在工作中会用到textarea文本域自适应输入的内容的情况，今天我们根据HTML5的新属性contenteditable来实现这个功能。</p>
+        <h3 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h3><h5 id="字符串截取sub-substing-slice"><a href="#字符串截取sub-substing-slice" class="headerlink" title="字符串截取sub,substing,slice"></a>字符串截取sub,substing,slice</h5><ul>
+<li>一个参数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'what are you doing?'</span>;</div><div class="line"><span class="comment">//参数为正数</span></div><div class="line">str.sub(<span class="number">1</span>);        <span class="comment">//'hat are you doing?'</span></div><div class="line">str.substring(<span class="number">1</span>);  <span class="comment">//'hat are you doing?'</span></div><div class="line">str.slice(<span class="number">1</span>);      <span class="comment">//'hat are you doing?'</span></div><div class="line"><span class="comment">//参数为负数</span></div><div class="line">str.sub(<span class="number">-1</span>);       <span class="comment">//'?'</span></div><div class="line">str.substring(<span class="number">-1</span>); <span class="comment">//'what are you doing?'</span></div><div class="line">str.slice(<span class="number">-1</span>);     <span class="comment">//'?'</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>sub,slice支持参数为正数和负数(等价于字符串长度+负数)，<br>substring只支持参数为正数，如果为负数会返回整个字符串</p>
+</blockquote>
+<a id="more"></a>
+<ul>
+<li>两个参数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'what are you doing?'</span>;</div><div class="line"><span class="comment">// 两个参数都为正数</span></div><div class="line"> str.substr(<span class="number">1</span>,<span class="number">4</span>);      <span class="comment">//'hat '</span></div><div class="line"> str.substring(<span class="number">1</span>,<span class="number">4</span>);   <span class="comment">//'hat'</span></div><div class="line"> str.slice(<span class="number">1</span>,<span class="number">4</span>);       <span class="comment">//'hat'</span></div><div class="line"></div><div class="line"><span class="comment">// 有负数参数</span></div><div class="line"> str.substr(<span class="number">-5</span>,<span class="number">4</span>);  <span class="comment">//'oing'</span></div><div class="line"> str.substring(<span class="number">-5</span>,<span class="number">4</span>);<span class="comment">//'what'</span></div><div class="line"> str.slice(<span class="number">-5</span>,<span class="number">4</span>);    <span class="comment">//''</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>substr，第二个参数代表的是截取字符串的长度，第二个参数不能为负数;<br>substing，参数为负数会自动转换为0，并且数值小的为起点。<br>slice，第二个参数的数值小于第一个参数的数值返回空值。</p>
 </blockquote>
 
       
@@ -370,9 +382,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/html5/" rel="tag"># html5</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
-            <a href="/tags/contenteditable/" rel="tag"># contenteditable</a>
+            <a href="/tags/string/" rel="tag"># string</a>
           
         </div>
       
@@ -385,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/07/cartoon Redux/" rel="next" title="《看漫画，学Redux》[转载]">
-                <i class="fa fa-chevron-left"></i> 《看漫画，学Redux》[转载]
+              <a href="/2017/09/06/ueditor去除自动保存-md/" rel="next" title="ueditor去除自动保存.md">
+                <i class="fa fa-chevron-left"></i> ueditor去除自动保存.md
               </a>
             
           </div>
@@ -394,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/15/react-native-1/" rel="prev" title="初识React-native（一）">
-                初识React-native（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -444,8 +452,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -498,6 +515,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作方法"><span class="nav-number">1.</span> <span class="nav-text">操作方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串截取sub-substing-slice"><span class="nav-number">1.0.1.</span> <span class="nav-text">字符串截取sub,substing,slice</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
