@@ -1,7 +1,7 @@
 ---
 title: Location-Object
 date: 2017-05-09 15:49:34
-tags: javascript
+tags: [javascript, object, location]
 ---
 
 - 它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。

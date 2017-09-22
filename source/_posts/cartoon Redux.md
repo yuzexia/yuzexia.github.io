@@ -2,7 +2,7 @@
 ---
 title: 《看漫画，学Redux》[转载]
 date: 2017-06-07 10:00:41
-tags: javascript
+tags: [javascript, redux]
 ---
 
 # 《看漫画，学 Redux》 —— A cartoon intro to Redux
