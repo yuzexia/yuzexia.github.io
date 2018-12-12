@@ -79,13 +79,6 @@
     </url>
 
     <url>
-        <loc>https://yuzexia.github.io/tags/javascript/</loc>
-        <lastmod>2018-11-30T02:23:18.230Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://yuzexia.github.io/tags/React/</loc>
         <lastmod>2018-11-30T02:23:18.230Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -95,6 +88,34 @@
     <url>
         <loc>https://yuzexia.github.io/tags/jsx/</loc>
         <lastmod>2018-11-30T02:23:18.230Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://yuzexia.github.io/tags/javascript/</loc>
+        <lastmod>2018-12-12T09:45:59.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://yuzexia.github.io/tags/html/</loc>
+        <lastmod>2018-12-12T09:45:59.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://yuzexia.github.io/tags/css/</loc>
+        <lastmod>2018-12-12T09:45:59.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://yuzexia.github.io/tags/canvas/</loc>
+        <lastmod>2018-12-12T09:45:59.256Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
