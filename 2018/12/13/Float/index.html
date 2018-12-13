@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          清除浮动带来的影响 - 语择 | 择哥请叫我
+          Float - 语择 | 择哥请叫我
         
     </title>
 
-    <link rel="canonical" href="https://yuzexia.github.io/2018/12/13/清除浮动带来的影响/">
+    <link rel="canonical" href="https://yuzexia.github.io/2018/12/13/Float/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -101,7 +101,7 @@
                               <a class="tag" href="/tags/#BFC" title="BFC">BFC</a>
                             
                         </div>
-                        <h1>清除浮动带来的影响</h1>
+                        <h1>Float</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by yuze xia on
@@ -222,58 +222,100 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="清除浮动带来的影响">清除浮动带来的影响</span></h2>
+                <h2><span id="浮动">浮动</span></h2>
 <blockquote>
-<p>浮动造成父元素高度塌陷</p>
+<p>浮动的本质，就是实现文字环绕效果</p>
 </blockquote>
-<h3><span id="清除浮动的方法">清除浮动的方法</span></h3>
+<h3><span id="浮动的表现形式">浮动的表现形式</span></h3>
 <ul>
-<li>底部插入有<code>clear:both;</code>的元素</li>
-<li>父元素BFC(IE8+)或haslayout(IE6/IE7)</li>
+<li>元素block化</li>
+<li>破坏性造成的紧密排列特性(去空格化)</li>
 </ul>
-<h3><span id="清除浮动方法的差异">清除浮动方法的差异</span></h3>
-<h4><span id="clearboth">clear:both</span></h4>
+<p><img src="https://img2.mukewang.com/5c1216fb00014ca912800720-156-88.jpg" alt=""></p>
+<h3><span id="砌砖布局的问题">砌砖布局的问题</span></h3>
+<ul>
+<li>容错性比较糟糕，容易出问题</li>
+<li>这种布局需要元素固定尺寸，很难重复使用</li>
+<li>在低版本IE下会有很多问题</li>
+</ul>
+<h3><span id="浮动与流体布局">浮动与流体布局</span></h3>
+<ul>
+<li>文字环绕</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">float</span>:left;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>左右浮动，中间居中布局</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左：floa<span class="variable">t:</span> <span class="keyword">left</span></span><br><span class="line">右：floa<span class="variable">t:</span> <span class="keyword">right</span></span><br><span class="line">中间：text-align: <span class="keyword">center</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>文字环绕衍生-单侧固定</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">固定元素：<span class="built_in">width</span>+<span class="keyword">float</span>;</span><br><span class="line">右侧元素：padding-left/margin-left;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>DOM与显示位置匹配的单侧固定布局</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左侧父元素：<span class="built_in">width</span>：<span class="number">100</span>% + <span class="keyword">float</span></span><br><span class="line">左侧子元素：padding-left/margin-left</span><br><span class="line">右侧固定元素：<span class="built_in">width</span> + <span class="keyword">float</span> + margin负值</span><br></pre></td></tr></table></figure>
+<ul>
+<li>智能自适应布局</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左侧：<span class="keyword">float</span></span><br><span class="line">右侧：<span class="built_in">display</span>:table-cell(IE8+)</span><br><span class="line">      *<span class="built_in">display</span>:<span class="keyword">inline</span>-block(IE7)</span><br></pre></td></tr></table></figure>
+<h3><span id="float与兼容性">Float与兼容性</span></h3>
+<h4><span id="让ie7飙泪的浮动问题">让IE7飙泪的浮动问题</span></h4>
 <ol>
-<li>与外界接触</li>
-<li>margin重叠</li>
+<li>含clear的浮动元素包裹不正确的问题</li>
 </ol>
-<h4><span id="bfchaslayout">BFC/haslayout</span></h4>
-<ol>
-<li>封闭结构，内部声明不会对外部造成任何影响</li>
+<blockquote>
+<p>IE7的表现</p>
+</blockquote>
+<p><img src="https://img1.mukewang.com/5c121f290001f54b12800720.jpg" alt=""></p>
+<blockquote>
+<p>IE8+的表现</p>
+</blockquote>
+<p><img src="https://img2.mukewang.com/5c121f710001230212800720.jpg" alt=""></p>
+<ol start="2">
+<li>浮动元素倒数2哥莫名垂直间距问题</li>
 </ol>
-<h3><span id="clear通常应用形式">clear通常应用形式</span></h3>
-<h4><span id="clearboth">clear:both</span></h4>
-<ul>
-<li>HTML block水平元素底部走起</li>
-</ul>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;div ...&gt;</span><span class="section">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Css after 伪元素底部生成</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="两种形式的不足">两种形式的不足</span></h4>
-<ul>
-<li>div元素–很多裸露的div标签</li>
-<li>after伪元素–不兼容IE6/IE7</li>
-</ul>
-<h4><span id="bfchaslayout通常声明">BFC/haslayout通常声明</span></h4>
-<ul>
-<li>float:left/right</li>
-<li>position:absolute/fixed</li>
-<li>overflow:hidden/scroll(IE7+)</li>
-<li>display:inline-block/table-cell(IE8+)</li>
-<li>width/height/zoom:1/…(IE6/IE7)</li>
-</ul>
 <blockquote>
-<p>因BFC不能“一方通行”</p>
+<p>IE7的表现</p>
 </blockquote>
-<h4><span id="权衡后的策略">权衡后的策略</span></h4>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IE8+</span></span><br><span class="line"><span class="selector-class">.clearfix</span>:after&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">overflow</span>:hidden;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// IE6/IE7</span></span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    *zoom:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="更好的方法">更好的方法</span></h4>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IE8+</span></span><br><span class="line"><span class="selector-class">.clearfix</span>:after&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">display</span>:table;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// IE6/IE7</span></span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    *zoom:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img3.mukewang.com/5c121fcf0001f57512800720.jpg" alt=""></p>
 <blockquote>
-<p><code>.clearfix</code>只需要应用到包含浮动子元素的父元素上，切勿滥用</p>
+<p>IE8+的表现</p>
 </blockquote>
+<p><img src="https://img.mukewang.com/5c12204500013fc612800720.jpg" alt=""></p>
+<ol start="3">
+<li>浮动元素最后一个自负重复问题</li>
+</ol>
+<blockquote>
+<p>IE7的表现</p>
+</blockquote>
+<p><img src="https://img4.mukewang.com/5c12208400012d9212800720.jpg" alt=""></p>
+<blockquote>
+<p>IE8+的表现</p>
+</blockquote>
+<p><img src="https://img4.mukewang.com/5c1220c90001f59112800720.jpg" alt=""></p>
+<ol start="4">
+<li>浮动元素楼梯排列问题</li>
+</ol>
+<blockquote>
+<p>IE7的表现</p>
+</blockquote>
+<p><img src="https://img3.mukewang.com/5c1221150001017312800720.jpg" alt=""></p>
+<blockquote>
+<p>IE8+的表现</p>
+</blockquote>
+<p><img src="https://img3.mukewang.com/5c12213e0001d12e12800720.jpg" alt=""></p>
+<ol start="5">
+<li>浮动元素和文本不在同一行的问题</li>
+</ol>
+<blockquote>
+<p>IE7的表现</p>
+</blockquote>
+<p><img src="https://img1.mukewang.com/5c1221b90001680b12800720.jpg" alt=""></p>
+<blockquote>
+<p>IE8+的表现</p>
+</blockquote>
+<p><img src="https://img2.mukewang.com/5c1221da000104e512800720.jpg" alt=""></p>
 
                 
 
@@ -281,13 +323,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2018/12/13/Float/" data-toggle="tooltip" data-placement="top" title="Float">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2018/12/12/使用canvas给图片添加水印/" data-toggle="tooltip" data-placement="top" title="使用canvas给图片添加水印">Next Post &rarr;</a>
+                            <a href="/2018/12/13/清除浮动带来的影响/" data-toggle="tooltip" data-placement="top" title="清除浮动带来的影响">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -317,7 +355,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">清除浮动带来的影响</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">清除浮动的方法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">清除浮动方法的差异</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">clear:both</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">BFC/haslayout</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">clear通常应用形式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">clear:both</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">两种形式的不足</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">BFC/haslayout通常声明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">权衡后的策略</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.5.</span> <span class="toc-nav-text">更好的方法</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">浮动</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">浮动的表现形式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">砌砖布局的问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">浮动与流体布局</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Float与兼容性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">让IE7飙泪的浮动问题</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -378,8 +416,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://yuzexia.github.io/2018/12/13/清除浮动带来的影响/";
-    var disqus_url = "https://yuzexia.github.io/2018/12/13/清除浮动带来的影响/";
+    var disqus_identifier = "https://yuzexia.github.io/2018/12/13/Float/";
+    var disqus_url = "https://yuzexia.github.io/2018/12/13/Float/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
