@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Float - 语择 | 择哥请叫我
+          shell命令实现批量精准剪切视频 - 语择 | 择哥请叫我
         
     </title>
 
-    <link rel="canonical" href="https://yuzexia.github.io/2018/12/13/Float/">
+    <link rel="canonical" href="https://yuzexia.github.io/2018/12/20/shell命令实现批量精准剪切视频/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,22 +90,18 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#html" title="html">html</a>
+                              <a class="tag" href="/tags/#ffmpeg" title="ffmpeg">ffmpeg</a>
                             
-                              <a class="tag" href="/tags/#css" title="css">css</a>
+                              <a class="tag" href="/tags/#视频剪辑" title="视频剪辑">视频剪辑</a>
                             
-                              <a class="tag" href="/tags/#float" title="float">float</a>
-                            
-                              <a class="tag" href="/tags/#clear" title="clear">clear</a>
-                            
-                              <a class="tag" href="/tags/#BFC" title="BFC">BFC</a>
+                              <a class="tag" href="/tags/#shell" title="shell">shell</a>
                             
                         </div>
-                        <h1>Float</h1>
+                        <h1>shell命令实现批量精准剪切视频</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by yuze xia on
-                            2018-12-13
+                            2018-12-20
                         </span>
                     </div>
                 
@@ -222,114 +218,19 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="浮动">浮动</span></h2>
-<blockquote>
-<p>浮动的本质，就是实现文字环绕效果</p>
-</blockquote>
-<h3><span id="浮动的表现形式">浮动的表现形式</span></h3>
-<ul>
-<li>元素block化</li>
-<li>破坏性造成的紧密排列特性(去空格化)</li>
-</ul>
-<p><img src="https://img2.mukewang.com/5c1216fb00014ca912800720-156-88.jpg" alt=""></p>
-<h3><span id="砌砖布局的问题">砌砖布局的问题</span></h3>
-<ul>
-<li>容错性比较糟糕，容易出问题</li>
-<li>这种布局需要元素固定尺寸，很难重复使用</li>
-<li>在低版本IE下会有很多问题</li>
-</ul>
-<h3><span id="浮动与流体布局">浮动与流体布局</span></h3>
-<ul>
-<li>文字环绕</li>
-</ul>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">float</span>:left;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>左右浮动，中间居中布局</li>
-</ul>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左：floa<span class="variable">t:</span> <span class="keyword">left</span></span><br><span class="line">右：floa<span class="variable">t:</span> <span class="keyword">right</span></span><br><span class="line">中间：text-align: <span class="keyword">center</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>文字环绕衍生-单侧固定</li>
-</ul>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">固定元素：<span class="built_in">width</span>+<span class="keyword">float</span>;</span><br><span class="line">右侧元素：padding-left/margin-left;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>DOM与显示位置匹配的单侧固定布局</li>
-</ul>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左侧父元素：<span class="built_in">width</span>：<span class="number">100</span>% + <span class="keyword">float</span></span><br><span class="line">左侧子元素：padding-left/margin-left</span><br><span class="line">右侧固定元素：<span class="built_in">width</span> + <span class="keyword">float</span> + margin负值</span><br></pre></td></tr></table></figure>
-<ul>
-<li>智能自适应布局</li>
-</ul>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左侧：<span class="keyword">float</span></span><br><span class="line">右侧：<span class="built_in">display</span>:table-cell(IE8+)</span><br><span class="line">      *<span class="built_in">display</span>:<span class="keyword">inline</span>-block(IE7)</span><br></pre></td></tr></table></figure>
-<h3><span id="float与兼容性">Float与兼容性</span></h3>
-<h4><span id="让ie7飙泪的浮动问题">让IE7飙泪的浮动问题</span></h4>
-<ol>
-<li>含clear的浮动元素包裹不正确的问题</li>
-</ol>
-<blockquote>
-<p>IE7的表现</p>
-</blockquote>
-<p><img src="https://img1.mukewang.com/5c121f290001f54b12800720.jpg" alt=""></p>
-<blockquote>
-<p>IE8+的表现</p>
-</blockquote>
-<p><img src="https://img2.mukewang.com/5c121f710001230212800720.jpg" alt=""></p>
-<ol start="2">
-<li>浮动元素倒数2哥莫名垂直间距问题</li>
-</ol>
-<blockquote>
-<p>IE7的表现</p>
-</blockquote>
-<p><img src="https://img3.mukewang.com/5c121fcf0001f57512800720.jpg" alt=""></p>
-<blockquote>
-<p>IE8+的表现</p>
-</blockquote>
-<p><img src="https://img.mukewang.com/5c12204500013fc612800720.jpg" alt=""></p>
-<ol start="3">
-<li>浮动元素最后一个自负重复问题</li>
-</ol>
-<blockquote>
-<p>IE7的表现</p>
-</blockquote>
-<p><img src="https://img4.mukewang.com/5c12208400012d9212800720.jpg" alt=""></p>
-<blockquote>
-<p>IE8+的表现</p>
-</blockquote>
-<p><img src="https://img4.mukewang.com/5c1220c90001f59112800720.jpg" alt=""></p>
-<ol start="4">
-<li>浮动元素楼梯排列问题</li>
-</ol>
-<blockquote>
-<p>IE7的表现</p>
-</blockquote>
-<p><img src="https://img3.mukewang.com/5c1221150001017312800720.jpg" alt=""></p>
-<blockquote>
-<p>IE8+的表现</p>
-</blockquote>
-<p><img src="https://img3.mukewang.com/5c12213e0001d12e12800720.jpg" alt=""></p>
-<ol start="5">
-<li>浮动元素和文本不在同一行的问题</li>
-</ol>
-<blockquote>
-<p>IE7的表现</p>
-</blockquote>
-<p><img src="https://img1.mukewang.com/5c1221b90001680b12800720.jpg" alt=""></p>
-<blockquote>
-<p>IE8+的表现</p>
-</blockquote>
-<p><img src="https://img2.mukewang.com/5c1221da000104e512800720.jpg" alt=""></p>
-
+                <h1><span id="shell命令截取视频">shell命令截取视频</span></h1>
+<p><a href="https://blog.csdn.net/miao9999/article/details/79189534" target="_blank" rel="noopener">参考链接1:用 ffmpeg 实现批量剪切视频</a></p>
+<p><a href="https://blog.csdn.net/matrix_laboratory/article/details/53157383" target="_blank" rel="noopener">参考链接2:ffmpeg视频精准剪切</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="variable">$1</span> 为输入的文件名</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="variable">$2</span> 为需要截取的长度（秒）</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 开始时间</span></span><br><span class="line">startTime=0</span><br><span class="line"><span class="meta">#</span><span class="bash"> 结束时间</span></span><br><span class="line">endTime=0</span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取视频长度</span></span><br><span class="line">duration=$(ffmpeg -i $1 2&gt;&amp;1 | grep "Duration" | cut -d " " -f 4 | sed s/,//)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 00:02:20</span></span><br><span class="line">array=($&#123;duration//:/ &#125;)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 视频长度</span></span><br><span class="line">length=`expr $&#123;array[0]&#125; \* 3600 + $&#123;array[1]&#125; \* 60 + $&#123;array[2]%%.*&#125;`</span><br><span class="line">echo $length</span><br><span class="line">i=0</span><br><span class="line">str=$1</span><br><span class="line">dir=$&#123;str%%.*&#125;</span><br><span class="line">interval=15</span><br><span class="line">ls -al $1</span><br><span class="line"></span><br><span class="line">mkdir $dir</span><br><span class="line">if [ -n "$2" ] ; then</span><br><span class="line">    interval=$2</span><br><span class="line">fi</span><br><span class="line">while [ $endTime -le $length ]; do</span><br><span class="line">    #statements</span><br><span class="line">    i=$[$i+1]</span><br><span class="line">    endTime=$[$startTime+$interval]</span><br><span class="line">    ffmpeg -ss $startTime -t $interval -accurate_seek -i $1 -acodec copy -vcodec copy -avoid_negative_ts 1 $dir/$i.mp4</span><br><span class="line">    startTime=$[endTime]</span><br><span class="line"></span><br><span class="line">done</span><br></pre></td></tr></table></figure>
                 
 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2018/12/20/shell命令实现批量精准剪切视频/" data-toggle="tooltip" data-placement="top" title="shell命令实现批量精准剪切视频">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2018/12/13/清除浮动带来的影响/" data-toggle="tooltip" data-placement="top" title="清除浮动带来的影响">Next Post &rarr;</a>
+                            <a href="/2018/12/13/Float/" data-toggle="tooltip" data-placement="top" title="Float">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -359,7 +260,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">浮动</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">浮动的表现形式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">砌砖布局的问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">浮动与流体布局</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Float与兼容性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">让IE7飙泪的浮动问题</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">shell命令截取视频</span></a></li></ol>
         
         </div>
       </aside>
@@ -379,15 +280,11 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#html" title="html">html</a>
+                          <a class="tag" href="/tags/#ffmpeg" title="ffmpeg">ffmpeg</a>
                         
-                          <a class="tag" href="/tags/#css" title="css">css</a>
+                          <a class="tag" href="/tags/#视频剪辑" title="视频剪辑">视频剪辑</a>
                         
-                          <a class="tag" href="/tags/#float" title="float">float</a>
-                        
-                          <a class="tag" href="/tags/#clear" title="clear">clear</a>
-                        
-                          <a class="tag" href="/tags/#BFC" title="BFC">BFC</a>
+                          <a class="tag" href="/tags/#shell" title="shell">shell</a>
                         
                     </div>
                 </section>
@@ -420,8 +317,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://yuzexia.github.io/2018/12/13/Float/";
-    var disqus_url = "https://yuzexia.github.io/2018/12/13/Float/";
+    var disqus_identifier = "https://yuzexia.github.io/2018/12/20/shell命令实现批量精准剪切视频/";
+    var disqus_url = "https://yuzexia.github.io/2018/12/20/shell命令实现批量精准剪切视频/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
