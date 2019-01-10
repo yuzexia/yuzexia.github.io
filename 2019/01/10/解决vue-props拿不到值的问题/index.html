@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          清除浮动带来的影响 - 语择 | 择哥请叫我
+          解决vue props拿不到值的问题 - 语择 | 择哥请叫我
         
     </title>
 
-    <link rel="canonical" href="https://yuzexia.github.io/2018/12/13/清除浮动带来的影响/">
+    <link rel="canonical" href="https://yuzexia.github.io/2019/01/10/解决vue-props拿不到值的问题/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,22 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#html" title="html">html</a>
-                            
-                              <a class="tag" href="/tags/#css" title="css">css</a>
-                            
-                              <a class="tag" href="/tags/#float" title="float">float</a>
-                            
-                              <a class="tag" href="/tags/#clear" title="clear">clear</a>
-                            
-                              <a class="tag" href="/tags/#BFC" title="BFC">BFC</a>
+                              <a class="tag" href="/tags/#【vue, props, watch】" title="【vue, props, watch】">【vue, props, watch】</a>
                             
                         </div>
-                        <h1>清除浮动带来的影响</h1>
+                        <h1>解决vue props拿不到值的问题</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by yuze xia on
-                            2018-12-13
+                            2019-01-10
                         </span>
                     </div>
                 
@@ -222,57 +214,21 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="清除浮动带来的影响">清除浮动带来的影响</span></h2>
-<blockquote>
-<p>浮动造成父元素高度塌陷</p>
+                <blockquote>
+<p>vue开发中，子组件经常出现props中获取不到父组件传过来的值，发现以下两种方法可以解决这种问题</p>
 </blockquote>
-<h3><span id="清除浮动的方法">清除浮动的方法</span></h3>
-<ul>
-<li>底部插入有<code>clear:both;</code>的元素</li>
-<li>父元素BFC(IE8+)或haslayout(IE6/IE7)</li>
-</ul>
-<h3><span id="清除浮动方法的差异">清除浮动方法的差异</span></h3>
-<h4><span id="clearboth">clear:both</span></h4>
-<ol>
-<li>与外界接触</li>
-<li>margin重叠</li>
-</ol>
-<h4><span id="bfchaslayout">BFC/haslayout</span></h4>
-<ol>
-<li>封闭结构，内部声明不会对外部造成任何影响</li>
-</ol>
-<h3><span id="clear通常应用形式">clear通常应用形式</span></h3>
-<h4><span id="clearboth">clear:both</span></h4>
-<ul>
-<li>HTML block水平元素底部走起</li>
-</ul>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;div ...&gt;</span><span class="section">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Css after 伪元素底部生成</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="两种形式的不足">两种形式的不足</span></h4>
-<ul>
-<li>div元素–很多裸露的div标签</li>
-<li>after伪元素–不兼容IE6/IE7</li>
-</ul>
-<h4><span id="bfchaslayout通常声明">BFC/haslayout通常声明</span></h4>
-<ul>
-<li>float:left/right</li>
-<li>position:absolute/fixed</li>
-<li>overflow:hidden/scroll(IE7+)</li>
-<li>display:inline-block/table-cell(IE8+)</li>
-<li>width/height/zoom:1/…(IE6/IE7)</li>
-</ul>
+<h3><span id="方法一">方法一</span></h3>
 <blockquote>
-<p>因BFC不能“一方通行”</p>
+<p>在父组件调用子组件时，设置<code>v-if=&quot;status&quot;</code>，初始值设置为<code>false</code>,在成功获取数据之后设置为<code>true</code></p>
 </blockquote>
-<h4><span id="权衡后的策略">权衡后的策略</span></h4>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IE8+</span></span><br><span class="line"><span class="selector-class">.clearfix</span>:after&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">overflow</span>:hidden;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// IE6/IE7</span></span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    *zoom:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="更好的方法">更好的方法</span></h4>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IE8+</span></span><br><span class="line"><span class="selector-class">.clearfix</span>:after&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">display</span>:table;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// IE6/IE7</span></span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    *zoom:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子组件</span></span><br><span class="line"> &lt;child :datas=<span class="string">"conditionStatisticsData"</span> v-<span class="keyword">if</span>=<span class="string">"status"</span>&gt;&lt;/child&gt;</span><br><span class="line"><span class="comment">// 成功获取数据后 status设置成true</span></span><br><span class="line"> homeResource.getConditionData().then((res) =&gt; &#123;</span><br><span class="line"> <span class="keyword">this</span>.status = <span class="literal">true</span></span><br><span class="line">  <span class="keyword">if</span> (res.<span class="keyword">data</span>.status === <span class="number">0</span>) &#123;</span><br><span class="line">   console.log(<span class="string">'条件'</span>, res.<span class="keyword">data</span>.<span class="keyword">data</span>)</span><br><span class="line">   <span class="keyword">this</span>.conditionStatisticsData = res.<span class="keyword">data</span>.<span class="keyword">data</span></span><br><span class="line">  &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<h3><span id="方法二">方法二</span></h3>
 <blockquote>
-<p><code>.clearfix</code>只需要应用到包含浮动子元素的父元素上，切勿滥用</p>
+<p>watch 监听<code>props</code>传递过来的值</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">watch</span>: &#123;</span><br><span class="line"> <span class="attribute">data</span>: function (val) &#123;</span><br><span class="line">   this.<span class="built_in">initdata</span>(val)</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>希望能够帮得到大家。</p>
 </blockquote>
 
                 
@@ -281,13 +237,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2018/12/13/Float/" data-toggle="tooltip" data-placement="top" title="Float">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2018/12/12/使用canvas给图片添加水印/" data-toggle="tooltip" data-placement="top" title="使用canvas给图片添加水印">Next Post &rarr;</a>
+                            <a href="/2018/12/21/使用webpack从零开始搭建react项目/" data-toggle="tooltip" data-placement="top" title="使用webpack从零开始搭建react项目">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -317,7 +269,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">清除浮动带来的影响</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">清除浮动的方法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">清除浮动方法的差异</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">clear:both</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">BFC/haslayout</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">clear通常应用形式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">clear:both</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">两种形式的不足</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">BFC/haslayout通常声明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">权衡后的策略</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.5.</span> <span class="toc-nav-text">更好的方法</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">方法一</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">方法二</span></a></li></ol>
         
         </div>
       </aside>
@@ -337,15 +289,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#html" title="html">html</a>
-                        
-                          <a class="tag" href="/tags/#css" title="css">css</a>
-                        
-                          <a class="tag" href="/tags/#float" title="float">float</a>
-                        
-                          <a class="tag" href="/tags/#clear" title="clear">clear</a>
-                        
-                          <a class="tag" href="/tags/#BFC" title="BFC">BFC</a>
+                          <a class="tag" href="/tags/#【vue, props, watch】" title="【vue, props, watch】">【vue, props, watch】</a>
                         
                     </div>
                 </section>
@@ -378,8 +322,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://yuzexia.github.io/2018/12/13/清除浮动带来的影响/";
-    var disqus_url = "https://yuzexia.github.io/2018/12/13/清除浮动带来的影响/";
+    var disqus_identifier = "https://yuzexia.github.io/2019/01/10/解决vue-props拿不到值的问题/";
+    var disqus_url = "https://yuzexia.github.io/2019/01/10/解决vue-props拿不到值的问题/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

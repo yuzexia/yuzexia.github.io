@@ -213,6 +213,41 @@
 
 <div class="post-preview">
 
+    <a href="/2019/01/10/解决vue-props拿不到值的问题/">
+        <h2 class="post-title">
+            解决vue props拿不到值的问题
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+vue开发中，子组件经常出现props中获取不到父组件传过来的值，发现以下两种方法可以解决这种问题
+
+方法一
+
+在父组件调用子组件时，设置v-if=&quot;status&quot;，初始值设置为false,在成功获取数据之后设置为true
+
+12345678910// 子组件 &lt;child :datas="conditionStatisticsData" v-if="status......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by yuze xia on
+            2019-01-10
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#【vue, props, watch】" title="【vue, props, watch】">【vue, props, watch】</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2018/12/21/使用webpack从零开始搭建react项目/">
         <h2 class="post-title">
             使用webpack从零开始搭建react项目
@@ -595,39 +630,6 @@ Node.js和npm的安装与使用
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/2017/08/14/contenteditable/">
-        <h2 class="post-title">
-            div模拟textarea文本域轻松实现高度自适应
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-在工作中会用到textarea文本域自适应输入的内容的情况，今天我们根据HTML5的新属性contenteditable来实现这个功能。
-
-...
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by yuze xia on
-            2017-08-14
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#html5" title="html5">html5</a>
-            
-              <a href="/tags/#contenteditable" title="contenteditable">contenteditable</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -685,6 +687,8 @@ Node.js和npm的安装与使用
         
             
             <a href="/tags/#javascript" title="javascript" rel="8">javascript</a>
+            
+        
             
         
             
@@ -856,7 +860,7 @@ Node.js和npm的安装与使用
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; yuze xia 2018 
+                    Copyright &copy; yuze xia 2019 
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a> 
                     <span style="display: inline-block; margin: 0 5px;">
