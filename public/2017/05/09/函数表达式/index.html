@@ -1,400 +1,321 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="择哥请叫我的博客网站">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          函数表达式 - 语择 | 择哥请叫我
+        
+    </title>
 
+    <link rel="canonical" href="https://yuzexia.github.io/2017/05/09/函数表达式/">
 
-  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-
-<html class="theme-next muse use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
     
-    
-  
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
 
-  
+    <link rel="stylesheet" href="/css/widget.css">
 
-  
+    <link rel="stylesheet" href="/css/rocket.css">
 
-  
+    <link rel="stylesheet" href="/css/signature.css">
 
-  
+    <link rel="stylesheet" href="/css/toc.css">
 
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
 
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="javascript," />
-
-
-
-
-
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
-
-
-
-
-
-
-<meta name="description" content="函数表达式 函数声明 函数声明语法    123function funName()&amp;#123;    //函数体&amp;#125; function是关键字，然后是函数名字，还有一个非标准的name属性，通过这个属性可以访问到函数指定的名字。这个属性的值永远等于跟在function关键字后面的标识符。1console.log(funName.name); //funName可以使用arguments.">
-<meta name="keywords" content="javascript">
-<meta property="og:type" content="article">
-<meta property="og:title" content="函数表达式">
-<meta property="og:url" content="http://yuzexia.github.io/2017/05/09/函数表达式/index.html">
-<meta property="og:site_name" content="前端小菜鸟">
-<meta property="og:description" content="函数表达式 函数声明 函数声明语法    123function funName()&amp;#123;    //函数体&amp;#125; function是关键字，然后是函数名字，还有一个非标准的name属性，通过这个属性可以访问到函数指定的名字。这个属性的值永远等于跟在function关键字后面的标识符。1console.log(funName.name); //funName可以使用arguments.">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489995952212&di=de4fccb3e1965772e5ac835604c69019&imgtype=0&src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F740839%2F201509%2F740839-20150914151133867-323877975.jpg">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/740839/201509/740839-20150914151358039-898068634.jpg">
-<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/White-Quality/969463/o_%e5%be%ae%e4%bf%a1%e6%88%aa%e5%9b%be_20170321125523.png">
-<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/White-Quality/969463/o_closure.png">
-<meta property="og:image" content="http://images2015.cnblogs.com/blog/740839/201509/740839-20150914151358039-898068634.jpg">
-<meta property="og:updated_time" content="2017-08-15T06:25:55.149Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="函数表达式">
-<meta name="twitter:description" content="函数表达式 函数声明 函数声明语法    123function funName()&amp;#123;    //函数体&amp;#125; function是关键字，然后是函数名字，还有一个非标准的name属性，通过这个属性可以访问到函数指定的名字。这个属性的值永远等于跟在function关键字后面的标识符。1console.log(funName.name); //funName可以使用arguments.">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489995952212&di=de4fccb3e1965772e5ac835604c69019&imgtype=0&src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F740839%2F201509%2F740839-20150914151133867-323877975.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('undefined')
+            /*post*/
+        
     }
-  };
+    
+    #signature{
+        background-image: url('/undefined');
+    }
+    
+</style>
+
+<header class="intro-header">
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                        </div>
+                        <h1>函数表达式</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by yuze xia on
+                            2017-05-09
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">择哥请叫我</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
 </script>
 
 
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
 
-  <link rel="canonical" href="http://yuzexia.github.io/2017/05/09/函数表达式/"/>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-
-
-
-  <title>函数表达式 | 前端小菜鸟</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">前端小菜鸟</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archiv
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yuzexia.github.io/2017/05/09/函数表达式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yuzexia">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端小菜鸟">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">函数表达式</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-09T14:31:41+08:00">
-                2017-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h2><ol>
-<li>函数声明<blockquote>
+                <h2><span id="函数表达式">函数表达式</span></h2>
+<ol>
+<li>函数声明</li>
+</ol>
+<blockquote>
 <p>函数声明语法</p>
 </blockquote>
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">funName</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//函数体</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>function是关键字，然后是函数名字，还有一个非标准的name属性，通过这个属性可以访问到函数指定的名字。这个属性的值永远等于跟在function关键字后面的标识符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(funName.name); <span class="comment">//funName可以使用arguments.callee自调用</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>function是关键字，然后是函数名字，还有一个非标准的name属性，通过这个属性可以访问到函数指定的名字。这个属性的值永远等于跟在function关键字后面的标识符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(funName.name); <span class="comment">//funName可以使用arguments.callee自调用</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <blockquote>
 <p>重要的特性</p>
 </blockquote>
-<p>函数声明提升(function declaration hoisting)，意思是在执行代码时会先读取函数声明，<br>意味着，<strong>可以把函数声明放在调用它的语句后面</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">abc();  <span class="comment">//"1"</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">abc</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'1'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>函数声明提升(function declaration hoisting)，意思是在执行代码时会先读取函数声明，<br>
+意味着，<strong>可以把函数声明放在调用它的语句后面</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">abc();  <span class="comment">//"1"</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abc</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'1'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上述代码能够正常执行</p>
-<ol>
+<ol start="2">
 <li>函数表达式</li>
 </ol>
 <blockquote>
 <p>函数声明的几种形式</p>
-<ul>
-<li>最常见的一种形式<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> funcName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//函数体</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
 </blockquote>
+<ul>
+<li>最常见的一种形式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>创建一个函数并将它赋值给变量funcName。这种情况下创建的函数为<strong>匿名函数(anonymous function)</strong>，因为function后面没有标识符。</p>
 <blockquote>
 <p>匿名函数有时候也叫拉姆达函数，匿名函数的name属性是空字符串。</p>
 </blockquote>
-<p>函数表达式与其他表达式一样，在使用前必须先赋值，要不能会报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">abc();</div><div class="line"><span class="keyword">var</span> abc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"1"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//报错：Uncaught TypeError: abc is not a function</span></div></pre></td></tr></table></figure></p>
+<p>函数表达式与其他表达式一样，在使用前必须先赋值，要不能会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abc();</span><br><span class="line"><span class="keyword">var</span> abc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"1"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//报错：Uncaught TypeError: abc is not a function</span></span><br></pre></td></tr></table></figure>
 <p>理解函数提升的关键，就是理解函数声明与函数表达式之间的区别：</p>
 <blockquote>
-<p>思考题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//不要这么做</span></div><div class="line"><span class="keyword">if</span>(isOk)&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'world'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>思考题</p>
 </blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不要这么做</span></span><br><span class="line"><span class="keyword">if</span>(isOk)&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'world'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>结果是什么？</p>
 <blockquote>
-<p>从表面上看，上述代码表示在isOk为true时，使用一个sayHello()的定义，否则，使用另一个sayHello()的定义<br>实际上，在ECMAScript中属于无效语法，javascript引擎会尝试修正错误，将其转换为合理的状态。<br>但是问题是各个浏览器尝试修正错误的做法并不一致。大多数浏览器会返回第一个声明，<br>因此使用这种方式很危险</p>
+<p>从表面上看，上述代码表示在isOk为true时，使用一个sayHello()的定义，否则，使用另一个sayHello()的定义<br>
+实际上，在ECMAScript中属于无效语法，javascript引擎会尝试修正错误，将其转换为合理的状态。<br>
+但是问题是各个浏览器尝试修正错误的做法并不一致。大多数浏览器会返回第一个声明，<br>
+因此使用这种方式很危险</p>
 </blockquote>
-<p>使用函数表达式就不会有这种问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以这样做</span></div><div class="line"><span class="keyword">var</span> sayHello;</div><div class="line"><span class="keyword">if</span>(isOk)&#123;</div><div class="line">    sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">'hello'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">'world!'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用函数表达式就不会有这种问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以这样做</span></span><br><span class="line"><span class="keyword">var</span> sayHello;</span><br><span class="line"><span class="keyword">if</span>(isOk)&#123;</span><br><span class="line">    sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">'world!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>能够创建函数再赋值给变量，也就能够把函数作为其他函数的返回值。</p>
-<h4 id="7-1-递归"><a href="#7-1-递归" class="headerlink" title="7.1 递归"></a>7.1 递归</h4><blockquote>
+<h4><span id="71-递归">7.1 递归</span></h4>
+<blockquote>
 <p>递归函数是在一个函数通过名字调用自身的情况下构成的</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num * count(num<span class="number">-1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num * count(num<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>上述代码是经典的阶乘函数<br>虽然这个函数从表面上看来没什么问题，但下面的代码却可能导致它出错</p>
+<p>上述代码是经典的阶乘函数<br>
+虽然这个函数从表面上看来没什么问题，但下面的代码却可能导致它出错</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> anotherCount = count;</div><div class="line">count = <span class="literal">null</span>;</div><div class="line">alert(anotherCount(<span class="number">4</span>))  <span class="comment">// 报错:count is not a function</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> anotherCount = count;</span><br><span class="line">count = <span class="literal">null</span>;</span><br><span class="line">alert(anotherCount(<span class="number">4</span>))  <span class="comment">// 报错:count is not a function</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>上面代码，先把函数count()保存在变量anotherCount中，然后将count变量设置为null，结果指向原始函数的引用只剩下一个。<br>但是在调用anotherCount()时，需要执行count()，而count已经不在是一个函数，所以导致出错”count is not a function”</p>
-<p>在这种情况下，使用arguments.callee可以解决这个问题<br>arguments.callee是一个指向正在执行的函数的指针，因此可以用它来实现函数的递归调用</p>
+<p>上面代码，先把函数count()保存在变量anotherCount中，然后将count变量设置为null，结果指向原始函数的引用只剩下一个。<br>
+但是在调用anotherCount()时，需要执行count()，而count已经不在是一个函数，所以导致出错&quot;count is not a function&quot;</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过使用<code>arguments.callee</code>代替函数名，可以确保无论怎么样调用函数都不会出问题，<br>因此，在编写函数递归调用时，使用<code>arguments.callee</code>总比使用函数名更保险。</p>
 <blockquote>
-<p>不过在严格模式下，”严格模式”（strict mode）不能通过脚本访问<code>arguments.callee</code>，访问这个属性将会报错。<br>不过可以使用命名函数表达式来达成相同的结果。</p>
+<p>在这种情况下，使用arguments.callee可以解决这个问题<br>
+arguments.callee是一个指向正在执行的函数的指针，因此可以用它来实现函数的递归调用</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="string">'strict mode'</span>   <span class="comment">//严格模式</span></div><div class="line"><span class="keyword">var</span> count = (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num * f(num<span class="number">-1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过使用<code>arguments.callee</code>代替函数名，可以确保无论怎么样调用函数都不会出问题，<br>
+因此，在编写函数递归调用时，使用<code>arguments.callee</code>总比使用函数名更保险。</p>
 <blockquote>
-<p>以上代码创建一个名为f()的命名函数表达式，然后将它赋值给变量count。即便是函数赋值给另一个变量<br>函数的名字f仍让有效，所以递归调用照样能正常完成。这种方式在严格模式和非严格模式都行的通。</p>
+<p>不过在严格模式下，“严格模式”（strict mode）不能通过脚本访问<code>arguments.callee</code>，访问这个属性将会报错。<br>
+不过可以使用命名函数表达式来达成相同的结果。</p>
 </blockquote>
-<h4 id="7-2-闭包"><a href="#7-2-闭包" class="headerlink" title="7.2 闭包"></a>7.2 闭包</h4><h6 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h6><blockquote>
-<p>闭包是指有权访问另一个函数作用域中的变量的函数<br>创建闭包最常见的方式，就是在一个函数内部创建另一个函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'strict mode'</span>   <span class="comment">//严格模式</span></span><br><span class="line"><span class="keyword">var</span> count = (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num * f(num<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上代码创建一个名为f()的命名函数表达式，然后将它赋值给变量count。即便是函数赋值给另一个变量<br>
+函数的名字f仍让有效，所以递归调用照样能正常完成。这种方式在严格模式和非严格模式都行的通。</p>
+</blockquote>
+<h4><span id="72-闭包">7.2 闭包</span></h4>
+<h6><span id="概念">概念</span></h6>
+<blockquote>
+<p>闭包是指有权访问另一个函数作用域中的变量的函数<br>
+创建闭包最常见的方式，就是在一个函数内部创建另一个函数。</p>
 </blockquote>
 <p>为什么还能够访问内部变量？</p>
 <blockquote>
-<p> 是因为内部函数的作用域中包含父函数的作用域。</p>
+<p>是因为内部函数的作用域中包含父函数的作用域。</p>
 </blockquote>
-<h6 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h6><blockquote>
-<p>当某个函数被调用时，会创建一个执行环境（execution context）及相应的作用域链接。<br>–&gt;<br>然后使用arguments和其他命名参数的值来初始化函数的活动对象（activation object）。<br>–&gt;<br>但在作用域链中，外部函数的活动对象始终处于第二位，外部函数的外部函数的活动对象处于第三位，…<br>直至作为作用域链终点的全局执行环境。   </p>
-<p>在函数执行过程中，为读取和写入变量的值，就需要在作用域链中查找变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">value1, value2</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(value1 &lt; value2)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(value1 &gt; value2)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h6><span id="作用域链">作用域链</span></h6>
+<blockquote>
+<p>当某个函数被调用时，会创建一个执行环境（execution context）及相应的作用域链接。<br>
+–&gt;<br>
+然后使用arguments和其他命名参数的值来初始化函数的活动对象（activation object）。<br>
+–&gt;<br>
+但在作用域链中，外部函数的活动对象始终处于第二位，外部函数的外部函数的活动对象处于第三位，…<br>
+直至作为作用域链终点的全局执行环境。</p>
 </blockquote>
+<blockquote>
+<p>在函数执行过程中，为读取和写入变量的值，就需要在作用域链中查找变量。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">value1, value2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(value1 &lt; value2)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(value1 &gt; value2)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上述代码：</p>
 <ol>
 <li>定义compare()函数</li>
@@ -404,7 +325,9 @@
 </ol>
 <p>compare()函数执行时的作用域链关系图</p>
 <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1489995952212&amp;di=de4fccb3e1965772e5ac835604c69019&amp;imgtype=0&amp;src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F740839%2F201509%2F740839-20150914151133867-323877975.jpg" alt="图片"></p>
-<p>后台每个执行环境都有一个表示变量的对象—-<strong>变量对象</strong>。<br><strong>全局环境</strong>的变量对象始终存在，而像<code>compare()</code>函数这样的<strong>局部环境</strong>的变量对象<br>则只在<em>函数执行</em>的过程中存在。</p>
+<p>后台每个执行环境都有一个表示变量的对象----<strong>变量对象</strong>。<br>
+<strong>全局环境</strong>的变量对象始终存在，而像<code>compare()</code>函数这样的<strong>局部环境</strong>的变量对象<br>
+则只在<em>函数执行</em>的过程中存在。</p>
 <ul>
 <li>在创建<code>compare()</code>函数时，会创建一个预先包含全局变量对象的作用域链，这个作用域链被保存在内部的<code>[[Scope]]</code>属性中</li>
 <li>当调用<code>compare()</code>函数时，会为函数创建一个<em>执行环境</em>，然后通过复制函数的<code>[[Scope]]</code>属性中的对象构建起执行环境的作用域链接。</li>
@@ -412,423 +335,376 @@
 </ul>
 <blockquote>
 <p>对于上述例子而言，compare()函数的执行环境，其作用域链中包含两个变量：</p>
+</blockquote>
 <ol>
 <li>本地变量对象</li>
-<li>全局变量对象<br>作用域链<em>本质上</em>是一个指向<em>变量对象</em>的<em>指针列表</em>，它只包含<strong>引用</strong>但不实际包含<strong>对象</strong>。</li>
+<li>全局变量对象</li>
 </ol>
+<blockquote>
+<p>作用域链<em>本质上</em>是一个指向<em>变量对象</em>的<em>指针列表</em>，它只包含<strong>引用</strong>但不实际包含<strong>对象</strong>。</p>
 </blockquote>
-<p>在函数中访问一个变量时，就会从作用域链中搜索具有相应名字的变量。<br>一般来讲，当函数执行完毕后，局部活动对象机会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）<br>但是，<strong><em>闭包</em></strong>的情况又有所不同。</p>
+<p>在函数中访问一个变量时，就会从作用域链中搜索具有相应名字的变量。<br>
+一般来讲，当函数执行完毕后，局部活动对象机会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）<br>
+但是，<strong><em>闭包</em></strong>的情况又有所不同。</p>
 <p>在另一个函数内部定义的函数会将包含函数(即外部函数)的活动对象添加到它的作用域链中。在匿名函数从createComparisonFunction()中被返回后，它的作用域链被初始化为包含createComparisonFunction()函数的活动对象和全局变量对象。这样匿名函数就可以访问在createComparisonFunction()中定义的所有变量。更为重要的是createComparisonFunction()函数在执行完毕后，其活动对象也不会被销毁，因为匿名函数的作用域链仍然在引用这个活动对象。换句话说，当createComparisonFunction()函数返回后，其执行环境的作用域链会被销毁，但它的活动对象仍然留在内存中；直到匿名函数被销毁后，createComparisonFunction()的活动对象才被销毁</p>
 <blockquote>
 <p>[注意]由于闭包会携带包含它的函数的作用域链，因此会比其他函数占用更多的内存。过度使用闭包可能会导致内存占用过多，所以只在绝对必要时使用闭包。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建函数</span></div><div class="line"><span class="keyword">var</span> compareNames = createComparisonFunction(<span class="string">"name"</span>);</div><div class="line"><span class="comment">//调用函数</span></div><div class="line"><span class="keyword">var</span> result = compareNames(&#123;<span class="attr">name</span>:<span class="string">"Nicholas"</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">"Greg"</span>&#125;);</div><div class="line"><span class="comment">//解除对匿名函数的引用(以便释放内存)</span></div><div class="line">compareNames = <span class="literal">null</span>;</div><div class="line"><span class="comment">/*首先，创建的比较函数被保存在变量compareNames中，</span></div><div class="line">而通过将compareNames设置为等于null，解除该函数的引用，</div><div class="line">就等于通知垃圾回收例程将其清除。随着匿名函数的作用域链被销毁，</div><div class="line">其他作用域(除了全局作用域)也都安全地销毁了。*/</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建函数</span></span><br><span class="line"><span class="keyword">var</span> compareNames = createComparisonFunction(<span class="string">"name"</span>);</span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line"><span class="keyword">var</span> result = compareNames(&#123;<span class="attr">name</span>:<span class="string">"Nicholas"</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">"Greg"</span>&#125;);</span><br><span class="line"><span class="comment">//解除对匿名函数的引用(以便释放内存)</span></span><br><span class="line">compareNames = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">/*首先，创建的比较函数被保存在变量compareNames中，</span></span><br><span class="line"><span class="comment">而通过将compareNames设置为等于null，解除该函数的引用，</span></span><br><span class="line"><span class="comment">就等于通知垃圾回收例程将其清除。随着匿名函数的作用域链被销毁，</span></span><br><span class="line"><span class="comment">其他作用域(除了全局作用域)也都安全地销毁了。*/</span></span><br></pre></td></tr></table></figure>
 <p><img src="http://images2015.cnblogs.com/blog/740839/201509/740839-20150914151358039-898068634.jpg" alt=""></p>
 <blockquote>
-<p>由于闭包会携带包含它的函数的作用域，因此会比其他函数占用更多的内存。<br>过度使用闭包可能会导致内存占用过多，<br>V8 javascript引擎会尝试回收被闭包占用的内存。</p>
+<p>由于闭包会携带包含它的函数的作用域，因此会比其他函数占用更多的内存。<br>
+过度使用闭包可能会导致内存占用过多，<br>
+V8 javascript引擎会尝试回收被闭包占用的内存。</p>
 </blockquote>
-<h5 id="7-2-1-闭包和变量"><a href="#7-2-1-闭包和变量" class="headerlink" title="7.2.1 闭包和变量"></a>7.2.1 闭包和变量</h5><blockquote>
-<p>作用域链的这种配置机制引起了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值。    </p>
+<h5><span id="721-闭包和变量">7.2.1 闭包和变量</span></h5>
+<blockquote>
+<p>作用域链的这种配置机制引起了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值。</p>
 </blockquote>
 <p>闭包保存的是<strong>整个变量对象</strong>，而不是<strong>某个特殊的值</strong>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">        result[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> i;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这个函数会返回一个值。结果是每个函数都返回10.<br>因为每个函数的作用域中都保存着createFunctions()函数的活动对象，<br>所以他们引用的都是同一个变量i。<br>当createFunctions()函数返回后，变量i的值是10，此时每个函数都引用着保存变量i<br>的同一个变量对象，<br>所以每个函数内部i的值都是10。</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/White-Quality/969463/o_%e5%be%ae%e4%bf%a1%e6%88%aa%e5%9b%be_20170321125523.png" alt="闭包"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Scopes[2]</div><div class="line">Closure (createFunctions)</div><div class="line">i:10</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        result[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数会返回一个值。结果是每个函数都返回10.<br>
+因为每个函数的作用域中都保存着createFunctions()函数的活动对象，<br>
+所以他们引用的都是同一个变量i。<br>
+当createFunctions()函数返回后，变量i的值是10，此时每个函数都引用着保存变量i<br>
+的同一个变量对象，<br>
+所以每个函数内部i的值都是10。</p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/White-Quality/969463/o_%e5%be%ae%e4%bf%a1%e6%88%aa%e5%9b%be_20170321125523.png" alt="闭包"></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Scopes</span><span class="selector-attr">[2]</span></span><br><span class="line"><span class="selector-tag">Closure</span> (createFunctions)</span><br><span class="line"><span class="selector-tag">i</span><span class="selector-pseudo">:10</span></span><br></pre></td></tr></table></figure>
 <p>我们可以通过创建另一个匿名函数强制让闭包的行为符合预期</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function createFunctions()&#123;</div><div class="line">    var result = new Array();</div><div class="line">    </div><div class="line">    for(var i = 0;i &lt; 10; i++)&#123;</div><div class="line">        result[i] = function(num)&#123;</div><div class="line">           return function()&#123;</div><div class="line">               return num;</div><div class="line">           &#125; </div><div class="line">        &#125;(i)</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span><span class="params">()</span>&#123;</span></span><br><span class="line">    var result = new Array();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(var <span class="built_in">i</span> = <span class="number">0</span>;<span class="built_in">i</span> &lt; <span class="number">10</span>; <span class="built_in">i</span>++)&#123;</span><br><span class="line">        result[<span class="built_in">i</span>] = <span class="function"><span class="keyword">function</span><span class="params">(num)</span>&#123;</span></span><br><span class="line">           <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span>&#123;</span></span><br><span class="line">               <span class="keyword">return</span> num;</span><br><span class="line">           &#125; </span><br><span class="line">        &#125;(<span class="built_in">i</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="http://images.cnblogs.com/cnblogs_com/White-Quality/969463/o_closure.png" alt="closure-2"></p>
-<p>改写后的createFunctions()函数，每个函数都会返回不同的索引值了。<br>没有直接把闭包赋值给数组，而是定义了一个匿名函数，并将立即执行该匿名函数的结果赋值给数组。<br>这里的匿名函数有一个参数num，也就是最终要返回的值。<br>在调用每个匿名函数时，我们出入变量i。<br>由于函数参数是按值传递的，所以就会将变量i的当前值赋值给参数num。<br>而在这个匿名函数内部，又创建了一个访问num的闭包，<br>这样一来，result数组中的每个函数都有自己num变量的副本，<br>因此就可以返回各自不同的数值了。</p>
-<h5 id="7-2-2关于this对象"><a href="#7-2-2关于this对象" class="headerlink" title="7.2.2关于this对象"></a>7.2.2关于this对象</h5><blockquote>
-<p>this对象是在运行时基于函数的执行环境绑定的：<br>在全局函数中：thiis等于window；<br>而在函数被当做某个对象的方法调用时：this等于那个对象。<br>不过匿名函数的执行环境具有全局性，因此匿名函数的this对象通常也指向window；<br>在通过call()和apply()改变函数执行环境的情况下，this就会指向其他对象。</p>
+<p>改写后的createFunctions()函数，每个函数都会返回不同的索引值了。<br>
+没有直接把闭包赋值给数组，而是定义了一个匿名函数，并将立即执行该匿名函数的结果赋值给数组。<br>
+这里的匿名函数有一个参数num，也就是最终要返回的值。<br>
+在调用每个匿名函数时，我们出入变量i。<br>
+由于函数参数是按值传递的，所以就会将变量i的当前值赋值给参数num。<br>
+而在这个匿名函数内部，又创建了一个访问num的闭包，<br>
+这样一来，result数组中的每个函数都有自己num变量的副本，<br>
+因此就可以返回各自不同的数值了。</p>
+<h5><span id="722关于this对象">7.2.2关于this对象</span></h5>
+<blockquote>
+<p>this对象是在运行时基于函数的执行环境绑定的：<br>
+在全局函数中：thiis等于window；<br>
+而在函数被当做某个对象的方法调用时：this等于那个对象。<br>
+不过匿名函数的执行环境具有全局性，因此匿名函数的this对象通常也指向window；<br>
+在通过call()和apply()改变函数执行环境的情况下，this就会指向其他对象。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var name = &quot;the window&quot;;</div><div class="line">var object = &#123;</div><div class="line">  name:&quot;my object&quot;,</div><div class="line">  getNameFunc:function()&#123;</div><div class="line">    return function()&#123;</div><div class="line">        return this.name</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">object.getNameFunc()();   //&quot;the window&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"the window"</span>;</span><br><span class="line"><span class="keyword">var</span> object = &#123;</span><br><span class="line">  name:<span class="string">"my object"</span>,</span><br><span class="line">  getNameFunc:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">object.getNameFunc()();   <span class="comment">//"the window"</span></span><br></pre></td></tr></table></figure>
 <p>为什么匿名函数没有取得其包含作用域（或外部作用域）的this对象呢？</p>
 <blockquote>
 <p>前面提到过，每个函数再被调用的时候会自动取得两个特殊变量 <code>this</code> 和 <code>arguments</code>。内部函数再搜索这两个变量时，只会搜索到其活动对象为止，因此永远不可能直接访问外部函数中的这两个变量(详见下图)。</p>
 </blockquote>
 <p><img src="http://images2015.cnblogs.com/blog/740839/201509/740839-20150914151358039-898068634.jpg" alt=""></p>
-<p>不过，把外部函数作用域中的this对象保存在一个闭包能够访问到的变量里面，就可以让闭包访问该对象了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var name = &quot;the window&quot;;</div><div class="line">var object = &#123;</div><div class="line">  name:&quot;my object&quot;,</div><div class="line">  getNameFunc:function()&#123;</div><div class="line">    var that = this;</div><div class="line">    return function()&#123;</div><div class="line">        return that.name</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">object.getNameFunc()();   //&quot;my object&quot;</div></pre></td></tr></table></figure></p>
+<p>不过，把外部函数作用域中的this对象保存在一个闭包能够访问到的变量里面，就可以让闭包访问该对象了。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"the window"</span>;</span><br><span class="line"><span class="keyword">var</span> object = &#123;</span><br><span class="line">  name:<span class="string">"my object"</span>,</span><br><span class="line">  getNameFunc:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> that.name</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">object.getNameFunc()();   <span class="comment">//"my object"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>tips: <code>this</code> 和 <code>arguments</code>也存在同样的问题，如果想访问作用域中的arguments对象，必须将对该对象的引用保存到另一个闭包能够访问的变量中。</p>
 </blockquote>
-<p>在几种特殊情况下，this的值可能会意外地改变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var name = &quot;the window&quot;;</div><div class="line">var object = &#123;</div><div class="line">  name:&quot;my object&quot;,</div><div class="line">  getNameFunc:function()&#123;</div><div class="line">    return this.name</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">object.getNameFunc();  //&apos;my object&apos;</div><div class="line">(object.getNameFunc)();  //&apos;my object&apos;</div><div class="line">(object.getNameFunc = object.getNameFunc)(); //&apos;the window&apos;</div></pre></td></tr></table></figure></p>
+<p>在几种特殊情况下，this的值可能会意外地改变</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"the window"</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="class"><span class="keyword">object</span> </span>= &#123;</span><br><span class="line">  name:<span class="string">"my object"</span>,</span><br><span class="line">  getNameFunc:function()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">object</span>.<span class="title">getNameFunc</span>(<span class="params"></span>)</span>;  <span class="comment">//'my object'</span></span><br><span class="line">(<span class="class"><span class="keyword">object</span>.<span class="title">getNameFunc</span>)(<span class="params"></span>)</span>;  <span class="comment">//'my object'</span></span><br><span class="line">(<span class="class"><span class="keyword">object</span>.<span class="title">getNameFunc</span> </span>= <span class="class"><span class="keyword">object</span>.<span class="title">getNameFunc</span>)(<span class="params"></span>)</span>; <span class="comment">//'the window'</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>上述代码：第一种方式跟平常一样调用了<code>object.getNameFunc()</code>,返回<code>my object</code>,因为<code>this.name</code>就是<code>object.name</code>。<br>第二种方式在调用这个方法前添加了括号，虽然添加了括号，就好像只是在引用一个函数，但this的值得到了维持，因为<code>object.getNameFunc</code>和<code>object.getNameFunc</code>定义是相同的。<br>第三种方式：先执行了一条赋值语句，然后在调用赋值后的结果。因为这个赋值表达式的值是函数本身，所以this的值得不到维持，结果返回<code>the window</code>。</p>
+<p>上述代码：第一种方式跟平常一样调用了<code>object.getNameFunc()</code>,返回<code>my object</code>,因为<code>this.name</code>就是<code>object.name</code>。<br>
+第二种方式在调用这个方法前添加了括号，虽然添加了括号，就好像只是在引用一个函数，但this的值得到了维持，因为<code>object.getNameFunc</code>和<code>object.getNameFunc</code>定义是相同的。<br>
+第三种方式：先执行了一条赋值语句，然后在调用赋值后的结果。因为这个赋值表达式的值是函数本身，所以this的值得不到维持，结果返回<code>the window</code>。</p>
 </blockquote>
 
-      
-    </div>
+                
 
-    <div>
-      
-        
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/05/09/Location-Object/" data-toggle="tooltip" data-placement="top" title="Location-Object">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/05/08/终于成功了/" data-toggle="tooltip" data-placement="top" title="终于成功了">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-      
-    </div>
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
 
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="yuzexia WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="yuzexia Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
 
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/05/08/终于成功了/" rel="next" title="终于成功了">
-                <i class="fa fa-chevron-left"></i> 终于成功了
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/09/Location-Object/" rel="prev" title="Location-Object">
-                Location-Object <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="yuzexia" />
-          <p class="site-author-name" itemprop="name">yuzexia</p>
-           
-              <p class="site-description motion-element" itemprop="description">前端, JavaScript, Html, Css</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">Artikel</span>
-              </a>
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
             </div>
-          
-
-          
-
-          
             
-            
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">Tags</span>
-              
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://www.w3cplus.com/" target="_blank">w3cplus</a></li>
+                    
+                        <li><a href="https://qianduan.group/" target="_blank">前端外刊评论</a></li>
+                    
+                        <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
+                    
+                </ul>
+                
             </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数表达式"><span class="nav-number">1.</span> <span class="nav-text">函数表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-递归"><span class="nav-number">1.0.1.</span> <span class="nav-text">7.1 递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-闭包"><span class="nav-number">1.0.2.</span> <span class="nav-text">7.2 闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#概念"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#作用域链"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">作用域链</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-2-1-闭包和变量"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">7.2.1 闭包和变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-2-2关于this对象"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">7.2.2关于this对象</span></a></li></ol></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
     </div>
-  </aside>
+</article>
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yuzexia</span>
-</div>
 
 
-<div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
-
+<!-- disqus embedded js code start (one page only need to embed once) -->
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "your-disqus-ID";
+    var disqus_identifier = "https://yuzexia.github.io/2017/05/09/函数表达式/";
+    var disqus_url = "https://yuzexia.github.io/2017/05/09/函数表达式/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/white_quality">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/whiteQuality">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://github.com/yuzexia">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; yuze xia 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a> | 
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=YenYuHsuan&repo=hexo-theme-beantech&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://yuzexia.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
 </script>
 
 
 
 
+<!-- Baidu Tongji -->
 
 
 
 
 
-  
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://yuzexia.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
+
 </html>

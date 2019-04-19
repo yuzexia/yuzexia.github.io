@@ -1,360 +1,236 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="择哥请叫我的博客网站">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          《看漫画，学Redux》[转载] - 语择 | 择哥请叫我
+        
+    </title>
 
+    <link rel="canonical" href="https://yuzexia.github.io/2017/06/07/cartoon Redux/">
 
-  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-
-<html class="theme-next muse use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
     
-    
-  
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
 
-  
+    <link rel="stylesheet" href="/css/widget.css">
 
-  
+    <link rel="stylesheet" href="/css/rocket.css">
 
-  
+    <link rel="stylesheet" href="/css/signature.css">
 
-  
+    <link rel="stylesheet" href="/css/toc.css">
 
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
 
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="javascript,redux," />
-
-
-
-
-
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
-
-
-
-
-
-
-<meta name="description" content="《看漫画，学 Redux》 —— A cartoon intro to Redux 不写一行代码，轻松看懂 Redux 原理。 原文 如果你有任何疑惑，不妨在 Issues 中提出。  Flux 架构已然让人觉得有些迷惑，而比 Flux 更让人摸不着头脑的是 Flux 与 Redux 的区别。Redux 是一个基于 Flux 思想的新架构方式，本文将探讨它们的区别。 如果你还没有看过这篇关于 Fl">
-<meta name="keywords" content="javascript,redux">
-<meta property="og:type" content="article">
-<meta property="og:title" content="《看漫画，学Redux》[转载]">
-<meta property="og:url" content="http://yuzexia.github.io/2017/06/07/cartoon Redux/index.html">
-<meta property="og:site_name" content="前端小菜鸟">
-<meta property="og:description" content="《看漫画，学 Redux》 —— A cartoon intro to Redux 不写一行代码，轻松看懂 Redux 原理。 原文 如果你有任何疑惑，不妨在 Issues 中提出。  Flux 架构已然让人觉得有些迷惑，而比 Flux 更让人摸不着头脑的是 Flux 与 Redux 的区别。Redux 是一个基于 Flux 思想的新架构方式，本文将探讨它们的区别。 如果你还没有看过这篇关于 Fl">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*L66K9uCQjjHmpAwT-a9C5Q.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*nBsGCWmJTR-Zj7aXeIE8yg.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*4zODv5vgvKsi6Ts7TihsoA.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*wLRhZ0wtI0duLsigdxL1CA.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*MG736zGtLMBbSkhwu4D3cA.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*5JaZSc3Jsn9PJY7daEDVDA.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1200/1*Uljrrh4Z7UiUwk8AjUO9PA.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1200/1*Gztc7THzxzOgJmGvJ95IQA.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1200/1*Vocy_6Gl9PbFlCIJsE9r3A.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1200/1*TgCkFcjlD9SxSrMvVX3DrA.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1200/1*D1RcVrMV2rp6AH9hk5xZ8g.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1200/1*JXPeiNP-it60-QYKb-p2eQ.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*8_fU31-jNQnQ0dp-wplm5w.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*NYMutQLW8TcEgbO8VNeqHA.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*aVoD3gGddKUy3VCxwylthQ.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*GNDs7SY53lEhp7mX8V25lw.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*p4EkWE_8upZ97Z0IapKDcQ.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*zmFp3bmDq7b6Bvlo8Ineag.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*zrsSoAAyf4pqTMHiA6P8Ww.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*-S_dYe6BoQBgwSRpF7Hriw.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*_R-rGNfKr2Xu2FlXNZNPJg.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*bUMekI8QlEfFxSBCuVuIkw.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*x6vBvUlFJktJqty56jr0QQ.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*qGatznV4QujuxGe49YfX5A.png">
-<meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*Je2mow8mjYLngXreGGlIEg.png">
-<meta property="og:updated_time" content="2017-08-15T06:26:19.602Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《看漫画，学Redux》[转载]">
-<meta name="twitter:description" content="《看漫画，学 Redux》 —— A cartoon intro to Redux 不写一行代码，轻松看懂 Redux 原理。 原文 如果你有任何疑惑，不妨在 Issues 中提出。  Flux 架构已然让人觉得有些迷惑，而比 Flux 更让人摸不着头脑的是 Flux 与 Redux 的区别。Redux 是一个基于 Flux 思想的新架构方式，本文将探讨它们的区别。 如果你还没有看过这篇关于 Fl">
-<meta name="twitter:image" content="https://d262ilb51hltx0.cloudfront.net/max/1600/1*L66K9uCQjjHmpAwT-a9C5Q.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('undefined')
+            /*post*/
+        
     }
-  };
+    
+    #signature{
+        background-image: url('/undefined');
+    }
+    
+</style>
+
+<header class="intro-header">
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                              <a class="tag" href="/tags/#redux" title="redux">redux</a>
+                            
+                        </div>
+                        <h1>《看漫画，学Redux》[转载]</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by yuze xia on
+                            2017-06-07
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">择哥请叫我</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
 </script>
 
 
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
 
-  <link rel="canonical" href="http://yuzexia.github.io/2017/06/07/cartoon Redux/"/>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-
-
-
-  <title>《看漫画，学Redux》[转载] | 前端小菜鸟</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">前端小菜鸟</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archiv
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yuzexia.github.io/2017/06/07/cartoon Redux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yuzexia">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端小菜鸟">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">《看漫画，学Redux》[转载]</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-07T10:00:41+08:00">
-                2017-06-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="《看漫画，学-Redux》-——-A-cartoon-intro-to-Redux"><a href="#《看漫画，学-Redux》-——-A-cartoon-intro-to-Redux" class="headerlink" title="《看漫画，学 Redux》 —— A cartoon intro to Redux"></a>《看漫画，学 Redux》 —— A cartoon intro to Redux</h1><blockquote>
-<p>不写一行代码，轻松看懂 Redux 原理。 <a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6" target="_blank" rel="external">原文</a></p>
-<p>如果你有任何疑惑，不妨在 <a href="https://github.com/jasonslyvia/a-cartoon-intro-to-redux-cn/issues" target="_blank" rel="external">Issues</a> 中提出。</p>
+                <h1><span id="看漫画学-redux-a-cartoon-intro-to-redux">《看漫画，学 Redux》 —— A cartoon intro to Redux</span></h1>
+<blockquote>
+<p>不写一行代码，轻松看懂 Redux 原理。 <a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6" target="_blank" rel="noopener">原文</a></p>
+<p>如果你有任何疑惑，不妨在 <a href="https://github.com/jasonslyvia/a-cartoon-intro-to-redux-cn/issues" target="_blank" rel="noopener">Issues</a> 中提出。</p>
 </blockquote>
 <p>Flux 架构已然让人觉得有些迷惑，而比 Flux 更让人摸不着头脑的是 Flux 与 Redux 的区别。Redux 是一个基于 Flux 思想的新架构方式，本文将探讨它们的区别。</p>
-<p>如果你还没有看过<a href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207" target="_blank" rel="external">这篇关于 Flux 的文章</a>（译者注：也可以参考<a href="https://www.zhihu.com/question/33864532/answer/57657275" target="_blank" rel="external">这篇</a>），你应该先阅读一下。</p>
+<p>如果你还没有看过<a href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207" target="_blank" rel="noopener">这篇关于 Flux 的文章</a>（译者注：也可以参考<a href="https://www.zhihu.com/question/33864532/answer/57657275" target="_blank" rel="noopener">这篇</a>），你应该先阅读一下。</p>
 <a id="more"></a>
-<h2 id="为什么要改变-Flux？"><a href="#为什么要改变-Flux？" class="headerlink" title="为什么要改变 Flux？"></a>为什么要改变 Flux？</h2><p>Redux 解决的问题和 Flux 一样，但 Redux 能做的还有更多。</p>
+<h2><span id="为什么要改变-flux">为什么要改变 Flux？</span></h2>
+<p>Redux 解决的问题和 Flux 一样，但 Redux 能做的还有更多。</p>
 <p>和 Flux 一样，Redux 让应用的状态变化变得更加可预测。如果你想改变应用的状态，就必须 dispatch 一个 action。你没有办法直接改变应用的状态，因为保存这些状态的东西（称为 store）只有 getter 而没有 setter。对于 Flux 和 Redux 来说，这些概念都是相似的。</p>
 <p>那么为什么要新设计一种架构呢？Redux 的创造者 Dan Abramov 发现了改进 Flux 架构的可能。他想要一个更好的开发者工具来调试 Flux 应用。他发现如果稍微对 Flux 架构进行一些调整，就可以开发出一款更好用的开发者工具，同时依然能享受 Flux 架构带给你的可预测性。</p>
 <p>确切的说，他想要的开发者工具包含了代码热替换（hot reload）和时间旅行（time travel）功能。然而要想在 Flux 架构上实现这些功能，确实有些麻烦。</p>
-<h3 id="问题1：store-的代码无法被热替换，除非清空当前的状态"><a href="#问题1：store-的代码无法被热替换，除非清空当前的状态" class="headerlink" title="问题1：store 的代码无法被热替换，除非清空当前的状态"></a>问题1：store 的代码无法被热替换，除非清空当前的状态</h3><p>在 Flux 中，store 包含了两样东西：</p>
+<h3><span id="问题1store-的代码无法被热替换除非清空当前的状态">问题1：store 的代码无法被热替换，除非清空当前的状态</span></h3>
+<p>在 Flux 中，store 包含了两样东西：</p>
 <ol>
 <li>改变状态的逻辑</li>
 <li>当前的状态</li>
@@ -364,7 +240,8 @@
 <p><strong>解决方案</strong></p>
 <p>将这两样东西分开处理。让一个对象来保存状态，这个对象在热替换代码的时候不会受到影响。让另一个对象包含所有改变状态的逻辑，这个对象可以被热替换因为它不用关心任何保存状态相关的事情。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*nBsGCWmJTR-Zj7aXeIE8yg.png" alt=""></p>
-<h3 id="问题2：每次触发-action-时状态对象都被直接改写了"><a href="#问题2：每次触发-action-时状态对象都被直接改写了" class="headerlink" title="问题2：每次触发 action 时状态对象都被直接改写了"></a>问题2：每次触发 action 时状态对象都被直接改写了</h3><p>时间旅行调试法的特性是：你能掌握状态对象的每一次变化，这样的话，你就能轻松的跳回到这个对象之前的某个状态（想象一个撤销功能）。</p>
+<h3><span id="问题2每次触发-action-时状态对象都被直接改写了">问题2：每次触发 action 时状态对象都被直接改写了</span></h3>
+<p>时间旅行调试法的特性是：你能掌握状态对象的每一次变化，这样的话，你就能轻松的跳回到这个对象之前的某个状态（想象一个撤销功能）。</p>
 <p>要实现这样的功能，每次状态改变之后，你都需要把旧的状态保存在一个数组中。但是由于 JavaScript 的对象引用特性，简单的把一个对象放进数组中并不能实现我们需要的功能。这样做不能创建一个快照（snapshot），而只是创建了一个新的指针指向同一个对象。</p>
 <p>所以要想实现时间旅行特性，每一个状态改变的版本都需要保存在不同的 JavaScript 对象中，这样你才不会不小心改变了某个历史版本的状态。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*4zODv5vgvKsi6Ts7TihsoA.png" alt=""></p>
@@ -380,26 +257,31 @@
 <p>将这个架构的部分功能包装进其他的对象中将使得我们的需求变得更容易实现。这些「其他对象」在架构原有的功能基础之上添加了自己的功能。你可以把这种扩展点看做是一个增强器（enhancers）或者高阶对象（higher order objects），亦或者中间件（middleware）。</p>
 <p>此外，使用一个树形结构来组织所有改变状态的逻辑，这样当状态发生改变的时候 store 只会触发一个事件来通知视图层（view），而这一个事件会被整棵树中的所有逻辑处理（译者注：「处理」不代表一定会改变状态，这些改变状态的逻辑本质上是函数，函数内部会根据 action 的类型等来确定是否对状态进行改变）。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*5JaZSc3Jsn9PJY7daEDVDA.png" alt=""></p>
-<p>*注意：就上述这些问题和解决方案来说，我主要在关注开发者工具这一使用场景。实际上，对 Flux 做出的这些改变在其他场景中也非常有帮助。在上述三点之外，Flux 和 Redux 还有更多的不同点。比如，相比于 Flux，Redux 精简了整个架构的冗余代码，并且复用 store 的逻辑变得更加简单。这里有一个 <a href="http://stackoverflow.com/a/32920459" target="_blank" rel="external">Redux 优点的列表</a>可供参考。</p>
+<p>*注意：就上述这些问题和解决方案来说，我主要在关注开发者工具这一使用场景。实际上，对 Flux 做出的这些改变在其他场景中也非常有帮助。在上述三点之外，Flux 和 Redux 还有更多的不同点。比如，相比于 Flux，Redux 精简了整个架构的冗余代码，并且复用 store 的逻辑变得更加简单。这里有一个 <a href="http://stackoverflow.com/a/32920459" target="_blank" rel="noopener">Redux 优点的列表</a>可供参考。</p>
 <p>那么让我们来看看 Redux 是怎么让这些特性变为现实的。</p>
-<h2 id="新的角色"><a href="#新的角色" class="headerlink" title="新的角色"></a>新的角色</h2><p>从 Flux 演进到 Redux，整个架构中的角色发生了些许的变化。</p>
-<h3 id="Action-creators"><a href="#Action-creators" class="headerlink" title="Action creators"></a>Action creators</h3><p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*Uljrrh4Z7UiUwk8AjUO9PA.png" alt=""></p>
+<h2><span id="新的角色">新的角色</span></h2>
+<p>从 Flux 演进到 Redux，整个架构中的角色发生了些许的变化。</p>
+<h3><span id="action-creators">Action creators</span></h3>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*Uljrrh4Z7UiUwk8AjUO9PA.png" alt=""></p>
 <p>Redux 保留了 Flux 中 action creator 的概念。每当你想要改变应用中的状态时，你就要 dispatch 一个 action，这也是唯一改变状态的方法。</p>
-<p>就像我在<a href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207" target="_blank" rel="external">这篇关于 Flux 的文章</a>中提到的一样，我把 action creator 看做是一个报务员（负责发电报的人，telegraph operator），你找到 action creator 告诉他你大致上想要传达什么信息，action creator 则会把这些信息格式化为一种标准的格式，以便系统中的其他部分能够理解。</p>
+<p>就像我在<a href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207" target="_blank" rel="noopener">这篇关于 Flux 的文章</a>中提到的一样，我把 action creator 看做是一个报务员（负责发电报的人，telegraph operator），你找到 action creator 告诉他你大致上想要传达什么信息，action creator 则会把这些信息格式化为一种标准的格式，以便系统中的其他部分能够理解。</p>
 <p>与 Flux 不同的是，Redux 中的 action creator 不会直接把 action 发送给 dispatcher，而是返回一个格式化好的 JavaScript 对象。</p>
-<h3 id="The-store"><a href="#The-store" class="headerlink" title="The store"></a>The store</h3><p>我把 Flux 中 store 的那一套机制描述为一种控制过度的官僚体系。你不能简单直接的修改状态，而是要求所有的状态改变都必须由 store 亲自产生，还必须要经历 action 分发那种套路。在 Redux 中，store 依然是这么的充满控制欲和官僚主义，但是又有些不一样。</p>
+<h3><span id="the-store">The store</span></h3>
+<p>我把 Flux 中 store 的那一套机制描述为一种控制过度的官僚体系。你不能简单直接的修改状态，而是要求所有的状态改变都必须由 store 亲自产生，还必须要经历 action 分发那种套路。在 Redux 中，store 依然是这么的充满控制欲和官僚主义，但是又有些不一样。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*Gztc7THzxzOgJmGvJ95IQA.png" alt=""></p>
 <p>在 Flux 中，你可以拥有多个 store，每一个 store 都有自己的统治权。每个 store 都保存着自己对应的那部分状态，以及所有修改这些状态的逻辑。</p>
 <p>而 Redux 中的 store 更喜欢将权力下放，事实上不得不这么做。因为在 Redux 中，你只能有一个 store……所以如果你打算像 Flux 那样让 store 完全独立处理自己的事情，那么在 Redux 中，store 里的工作量将变得非常大。</p>
 <p>因此，Redux 中的 store 首先会保存整个应用的所有状态，然后将「判断哪一部分状态需要改变」的任务分配下去。而以根 reducer（root reducer）为首的 reducer 们将会承担这个任务。</p>
 <p>你可能发现这里好像没有 dispatcher 什么事。是的，虽然看起来有点儿越权，但 Redux 里的 store 已经完全接管了 dispatcher 相关的工作。</p>
-<h3 id="The-reducers"><a href="#The-reducers" class="headerlink" title="The reducers"></a>The reducers</h3><p>当 store 需要知道一个 action 触发后状态需要怎么改变时，他会去询问 reducer。根 reducer 会根据状态对象的键（key）将整个状态树进行拆分，然后将拆分后的每一块子状态传到知道该怎么对这块状态进行响应的子 reducer 那里处理。</p>
+<h3><span id="the-reducers">The reducers</span></h3>
+<p>当 store 需要知道一个 action 触发后状态需要怎么改变时，他会去询问 reducer。根 reducer 会根据状态对象的键（key）将整个状态树进行拆分，然后将拆分后的每一块子状态传到知道该怎么对这块状态进行响应的子 reducer 那里处理。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*Vocy_6Gl9PbFlCIJsE9r3A.png" alt=""></p>
 <p>我把 reducers 看做是对复印情有独钟的白领们。他们不希望把任何事搞砸，因此他们不会修改任何传递给他们的文件。取而代之的是，他们会对这些文件进行复印，然后在复印件上进行修改。（译者注：当然，当这些修改后的复印件定稿后，他们也不会再去修改这些复印件。）</p>
 <p>这是 Redux 的核心思想之一。不直接修改整个应用的状态树，而是将状态树的每一部分进行拷贝并修改拷贝后的部分，然后将这些部分重新组合成一颗新的状态树。</p>
 <p>子 reducers 会把他们创建的副本传回给根 reducer，而根 reducer 会把这些副本组合起来形成一颗新的状态树。最后根 reducer 将新的状态树传回给 store，store 再将新的状态树设为最终的状态。</p>
 <p>如果你有一个小型应用，你可能只有一个 reducer 对整个状态树进行拷贝并作出修改。又或者你有一个超大的应用，你可能会有若干个 reducers 对整个状态树进行修改。这也是 Flux 和 Redux 的另一处区别。在 Flux 中，store 并不需要与其他 store 产生关联，而且 store 的结构是扁平的。而在 Redux 中，reducers 是有层级结构的。这种层级结构可以有若干层，就像组件的层级结构那样。</p>
-<h3 id="The-views-智能组件（smart-components）和木偶组件-dumb-components"><a href="#The-views-智能组件（smart-components）和木偶组件-dumb-components" class="headerlink" title="The views: 智能组件（smart components）和木偶组件(dumb components)"></a>The views: 智能组件（smart components）和木偶组件(dumb components)</h3><p>Flux 拥有控制型视图（controller views） 和常规型视图（regular views）。控制型视图就像是一个经理一样，管理着 store 和子视图（child views）之间的通信。</p>
+<h3><span id="the-views-智能组件smart-components和木偶组件dumb-components">The views: 智能组件（smart components）和木偶组件(dumb components)</span></h3>
+<p>Flux 拥有控制型视图（controller views） 和常规型视图（regular views）。控制型视图就像是一个经理一样，管理着 store 和子视图（child views）之间的通信。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*TgCkFcjlD9SxSrMvVX3DrA.png" alt=""></p>
 <p>在 Redux 中，也有一个类似的概念：智能组件和木偶组件。（译者注：在最新的 Redux 文档中，它们分别叫做容器型组件 Container component 和展示型组件 Presentational component）智能组件的职责就像经理一样，但是比起 Flux 中的角色，Redux 对经理的职责有了更多的定义：</p>
 <ul>
@@ -408,7 +290,8 @@
 <li>智能组件几乎不会产生自己的 DOM 节点，他的工作是组织若干的木偶组件，由木偶组件来生成最终的 DOM 节点。</li>
 </ul>
 <p>木偶组件不会直接依赖 action（译者注：即不会在木偶组件里 <code>require</code> action 相关的文件），因为所有的 action 都会当做 props 传下来。这意味着木偶组件可以被任何一个逻辑不同的 App 拿去使用。同时木偶组件也需要有一定的样式来让自己变得好看一些（当然你可以让木偶组件接受某些 props 作为设置样式的变量）。</p>
-<h3 id="视图层绑定"><a href="#视图层绑定" class="headerlink" title="视图层绑定"></a>视图层绑定</h3><p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*D1RcVrMV2rp6AH9hk5xZ8g.png" alt=""></p>
+<h3><span id="视图层绑定">视图层绑定</span></h3>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*D1RcVrMV2rp6AH9hk5xZ8g.png" alt=""></p>
 <p>要把 store 绑定到视图上，Redux 还需要一点帮助。如果你在使用 React，那么你需要使用 react-redux。</p>
 <p>视图绑定工作有点像为组件树服务的 IT 部门。IT 部门确保所有的组件都正确的绑定到 store 上，并处理各种技术上的细节，以确保余下层级的组件对绑定相关的操作毫无感知。</p>
 <p>视图层绑定引入了三个概念：</p>
@@ -417,20 +300,24 @@
 <li><code>connect()</code>：这是 <code>react-redux</code> 提供的一个方法。如果一个组件想要响应状态的变化，就把自己作为参数传给 connect() 的结果（译者注：connect() 返回的依然是一个函数），connect() 方法会处理与 store 绑定的细节，并通过 selector 确定该绑定 store 中哪一部分的数据。</li>
 <li><code>selector</code>：这是你自己编写的一个函数。这个函数声明了你的组件需要整个 store 中的哪一部分数据作为自己的 props。</li>
 </ol>
-<h3 id="根组件"><a href="#根组件" class="headerlink" title="根组件"></a>根组件</h3><p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*JXPeiNP-it60-QYKb-p2eQ.png" alt=""></p>
+<h3><span id="根组件">根组件</span></h3>
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/1200/1*JXPeiNP-it60-QYKb-p2eQ.png" alt=""></p>
 <p>所有的 React 应用都存在一个根组件（root component）。他其实就是整个组件树最外层的那个组件，但是在 Redux 中，根组件还要承担额外的任务。</p>
 <p>根组件承担的角色有点像企业中的高管，他将整个团队整合到一起来完成某项任务。他会创建 store，并告诉 store 使用哪些 reducers，并最终完成视图层的绑定。</p>
 <p>当完成整个应用的初始化工作后，根组件的就不再插手整个应用的运行过程了。每一次重新渲染（re-render）都没有根组件什么事，这些活儿都由根组件下面的子组件完成，当然也少不了视图层绑定的功劳。</p>
-<h2 id="Redux-完成的运行流程"><a href="#Redux-完成的运行流程" class="headerlink" title="Redux 完成的运行流程"></a>Redux 完成的运行流程</h2><p>让我们看看上述各个部分是怎样组合成一个可以运行的应用的。</p>
-<h3 id="配置环节"><a href="#配置环节" class="headerlink" title="配置环节"></a>配置环节</h3><p>应用中的不同部分需要在配置环节中整合到一起。</p>
-<p>(1) <strong>准备好 store。</strong>根组件会创建 store，并通过 createStore(reducer) 方法告诉 store 该使用哪个根 reducer。与此同时，根 reducer 也通过 combineReducers() 方法组建了一只向自己汇报的 reducer 团队。</p>
+<h2><span id="redux-完成的运行流程">Redux 完成的运行流程</span></h2>
+<p>让我们看看上述各个部分是怎样组合成一个可以运行的应用的。</p>
+<h3><span id="配置环节">配置环节</span></h3>
+<p>应用中的不同部分需要在配置环节中整合到一起。</p>
+<p>(1) **准备好 store。**根组件会创建 store，并通过 createStore(reducer) 方法告诉 store 该使用哪个根 reducer。与此同时，根 reducer 也通过 combineReducers() 方法组建了一只向自己汇报的 reducer 团队。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*8_fU31-jNQnQ0dp-wplm5w.png" alt=""></p>
-<p>(2) <strong>设置 store 和组件之间的通信。</strong>根组件将它所有的子组件包裹在 <code>&lt;Provider&gt;</code> 组件中，并建立了 Provider 与 store 之间的联系。</p>
+<p>(2) **设置 store 和组件之间的通信。**根组件将它所有的子组件包裹在 <code>&lt;Provider&gt;</code> 组件中，并建立了 Provider 与 store 之间的联系。</p>
 <p>Provider 本质上创建了一个用于更新视图组件的网络。那些智能组件通过 connect() 方法连入这个网络，以此确保他们能够获取到状态的更新。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*NYMutQLW8TcEgbO8VNeqHA.png" alt=""></p>
-<p>(3) <strong>准备好 action callback。</strong>为了让木偶组件更好的处理 action，智能组件可以用 <code>bindActionCreators()</code> 方法来创建 action callback。这样做之后，智能组件就能给木偶组件传入一个回调（callback）。对应的 action 会在木偶组件调用这个回调时被自动 dispatch。（译者注：使用 bindActionCreators() 使得木偶组件无需关心 action 的 type 等信息，只用调用 props 中的某个方法传入需要的参数作为 action 的 payload 即可）</p>
+<p>(3) **准备好 action callback。**为了让木偶组件更好的处理 action，智能组件可以用 <code>bindActionCreators()</code> 方法来创建 action callback。这样做之后，智能组件就能给木偶组件传入一个回调（callback）。对应的 action 会在木偶组件调用这个回调时被自动 dispatch。（译者注：使用 bindActionCreators() 使得木偶组件无需关心 action 的 type 等信息，只用调用 props 中的某个方法传入需要的参数作为 action 的 payload 即可）</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*aVoD3gGddKUy3VCxwylthQ.png" alt=""></p>
-<h3 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h3><p>现在我们的应用已经配置完成，用户可以开始操作了。让我们触发一个 action，看看数据是怎样流动的。</p>
+<h3><span id="数据流">数据流</span></h3>
+<p>现在我们的应用已经配置完成，用户可以开始操作了。让我们触发一个 action，看看数据是怎样流动的。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*GNDs7SY53lEhp7mX8V25lw.png" alt=""></p>
 <p>(1) 视图发出了一个 action，action creator 将这个 action 格式化并返回。</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*p4EkWE_8upZ97Z0IapKDcQ.png" alt=""></p>
@@ -451,391 +338,315 @@
 <p>(9) 视图层绑定触发了一个重新渲染的操作（re-render）</p>
 <p><img src="https://d262ilb51hltx0.cloudfront.net/max/1600/1*Je2mow8mjYLngXreGGlIEg.png" alt=""></p>
 <p>这就是我所理解的 Redux，希望对你有所帮助。</p>
-<h2 id="更多资源"><a href="#更多资源" class="headerlink" title="更多资源"></a>更多资源</h2><ul>
-<li><a href="http://rackt.org/redux/index.html" target="_blank" rel="external">Redux 官方文档</a></li>
-<li><a href="https://github.com/camsong/redux-in-chinese" target="_blank" rel="external">Redux 官方文档中文版</a></li>
-<li><a href="https://medium.com/@dan_abramov/the-evolution-of-flux-frameworks-6c16ad26bb31" target="_blank" rel="external">The Evolution of Flux Frameworks</a></li>
-<li><a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0" target="_blank" rel="external">Smart and Dumb Components</a></li>
-<li><a href="http://stackoverflow.com/a/32920459" target="_blank" rel="external">The upsides of using Redux</a></li>
-<li><a href="http://stackoverflow.com/a/32916602" target="_blank" rel="external">The downsides of using Redux</a></li>
-<li><a href="https://www.zhihu.com/question/38591713/answer/77634014" target="_blank" rel="external">如何评价数据流管理架构 Redux?</a></li>
+<h2><span id="更多资源">更多资源</span></h2>
+<ul>
+<li><a href="http://rackt.org/redux/index.html" target="_blank" rel="noopener">Redux 官方文档</a></li>
+<li><a href="https://github.com/camsong/redux-in-chinese" target="_blank" rel="noopener">Redux 官方文档中文版</a></li>
+<li><a href="https://medium.com/@dan_abramov/the-evolution-of-flux-frameworks-6c16ad26bb31" target="_blank" rel="noopener">The Evolution of Flux Frameworks</a></li>
+<li><a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0" target="_blank" rel="noopener">Smart and Dumb Components</a></li>
+<li><a href="http://stackoverflow.com/a/32920459" target="_blank" rel="noopener">The upsides of using Redux</a></li>
+<li><a href="http://stackoverflow.com/a/32916602" target="_blank" rel="noopener">The downsides of using Redux</a></li>
+<li><a href="https://www.zhihu.com/question/38591713/answer/77634014" target="_blank" rel="noopener">如何评价数据流管理架构 Redux?</a></li>
 </ul>
 
-      
-    </div>
+                
 
-    <div>
-      
-        
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/08/14/contenteditable/" data-toggle="tooltip" data-placement="top" title="div模拟textarea文本域轻松实现高度自适应">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/05/09/Location-Object/" data-toggle="tooltip" data-placement="top" title="Location-Object">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-      
-    </div>
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
 
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="yuzexia WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="yuzexia Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
 
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
-            <a href="/tags/redux/" rel="tag"># redux</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/05/09/Location-Object/" rel="next" title="Location-Object">
-                <i class="fa fa-chevron-left"></i> Location-Object
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/14/contenteditable/" rel="prev" title="div模拟textarea文本域轻松实现高度自适应">
-                div模拟textarea文本域轻松实现高度自适应 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="yuzexia" />
-          <p class="site-author-name" itemprop="name">yuzexia</p>
-           
-              <p class="site-description motion-element" itemprop="description">前端, JavaScript, Html, Css</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">Artikel</span>
-              </a>
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
             </div>
-          
-
-          
-
-          
             
-            
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">Tags</span>
-              
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                          <a class="tag" href="/tags/#redux" title="redux">redux</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://www.w3cplus.com/" target="_blank">w3cplus</a></li>
+                    
+                        <li><a href="https://qianduan.group/" target="_blank">前端外刊评论</a></li>
+                    
+                        <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
+                    
+                </ul>
+                
             </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#《看漫画，学-Redux》-——-A-cartoon-intro-to-Redux"><span class="nav-number">1.</span> <span class="nav-text">《看漫画，学 Redux》 —— A cartoon intro to Redux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要改变-Flux？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要改变 Flux？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题1：store-的代码无法被热替换，除非清空当前的状态"><span class="nav-number">1.1.1.</span> <span class="nav-text">问题1：store 的代码无法被热替换，除非清空当前的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题2：每次触发-action-时状态对象都被直接改写了"><span class="nav-number">1.1.2.</span> <span class="nav-text">问题2：每次触发 action 时状态对象都被直接改写了</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新的角色"><span class="nav-number">1.2.</span> <span class="nav-text">新的角色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Action-creators"><span class="nav-number">1.2.1.</span> <span class="nav-text">Action creators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-store"><span class="nav-number">1.2.2.</span> <span class="nav-text">The store</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-reducers"><span class="nav-number">1.2.3.</span> <span class="nav-text">The reducers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-views-智能组件（smart-components）和木偶组件-dumb-components"><span class="nav-number">1.2.4.</span> <span class="nav-text">The views: 智能组件（smart components）和木偶组件(dumb components)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视图层绑定"><span class="nav-number">1.2.5.</span> <span class="nav-text">视图层绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根组件"><span class="nav-number">1.2.6.</span> <span class="nav-text">根组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux-完成的运行流程"><span class="nav-number">1.3.</span> <span class="nav-text">Redux 完成的运行流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环节"><span class="nav-number">1.3.1.</span> <span class="nav-text">配置环节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据流"><span class="nav-number">1.3.2.</span> <span class="nav-text">数据流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多资源"><span class="nav-number">1.4.</span> <span class="nav-text">更多资源</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
     </div>
-  </aside>
+</article>
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yuzexia</span>
-</div>
 
 
-<div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
-
+<!-- disqus embedded js code start (one page only need to embed once) -->
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "your-disqus-ID";
+    var disqus_identifier = "https://yuzexia.github.io/2017/06/07/cartoon Redux/";
+    var disqus_url = "https://yuzexia.github.io/2017/06/07/cartoon Redux/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/white_quality">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/whiteQuality">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://github.com/yuzexia">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; yuze xia 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a> | 
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=YenYuHsuan&repo=hexo-theme-beantech&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://yuzexia.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
 </script>
 
 
 
 
+<!-- Baidu Tongji -->
 
 
 
 
 
-  
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://yuzexia.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
+
 </html>

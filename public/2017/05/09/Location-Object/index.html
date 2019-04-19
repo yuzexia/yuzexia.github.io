@@ -1,329 +1,230 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="择哥请叫我的博客网站">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Location-Object - 语择 | 择哥请叫我
+        
+    </title>
 
+    <link rel="canonical" href="https://yuzexia.github.io/2017/05/09/Location-Object/">
 
-  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-
-<html class="theme-next muse use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
     
-    
-  
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
 
-  
+    <link rel="stylesheet" href="/css/widget.css">
 
-  
+    <link rel="stylesheet" href="/css/rocket.css">
 
-  
+    <link rel="stylesheet" href="/css/signature.css">
 
-  
+    <link rel="stylesheet" href="/css/toc.css">
 
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
 
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="javascript,object,location," />
-
-
-
-
-
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
-
-
-
-
-
-
-<meta name="description" content="它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。 location对象很特别，它既是window对象的属性，又是document对象的属性。 1window.location === document.location  //true  location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。">
-<meta name="keywords" content="javascript,object,location">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Location-Object">
-<meta property="og:url" content="http://yuzexia.github.io/2017/05/09/Location-Object/index.html">
-<meta property="og:site_name" content="前端小菜鸟">
-<meta property="og:description" content="它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。 location对象很特别，它既是window对象的属性，又是document对象的属性。 1window.location === document.location  //true  location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。">
-<meta property="og:updated_time" content="2017-08-15T06:26:59.634Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Location-Object">
-<meta name="twitter:description" content="它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。 location对象很特别，它既是window对象的属性，又是document对象的属性。 1window.location === document.location  //true  location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('undefined')
+            /*post*/
+        
     }
-  };
+    
+    #signature{
+        background-image: url('/undefined');
+    }
+    
+</style>
+
+<header class="intro-header">
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                              <a class="tag" href="/tags/#object" title="object">object</a>
+                            
+                              <a class="tag" href="/tags/#location" title="location">location</a>
+                            
+                        </div>
+                        <h1>Location-Object</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by yuze xia on
+                            2017-05-09
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">择哥请叫我</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
 </script>
 
 
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
 
-  <link rel="canonical" href="http://yuzexia.github.io/2017/05/09/Location-Object/"/>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-
-
-
-  <title>Location-Object | 前端小菜鸟</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">前端小菜鸟</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Startseite
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archiv
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yuzexia.github.io/2017/05/09/Location-Object/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yuzexia">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端小菜鸟">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Location-Object</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-09T15:49:34+08:00">
-                2017-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <ul>
+                <ul>
 <li>它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能。</li>
-<li><p><code>location</code>对象很特别，它既是<code>window</code>对象的属性，又是<code>document</code>对象的属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.location === document.location  //true</div></pre></td></tr></table></figure>
-</li>
-<li><p>location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。</p>
-</li>
+<li><code>location</code>对象很特别，它既是<code>window</code>对象的属性，又是<code>document</code>对象的属性。</li>
+</ul>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.<span class="keyword">location</span> <span class="title">=== document</span>.<span class="keyword">location</span>  <span class="title">//true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>location对象的用处不只表现在它保存当前文档和信息，还表现在它将URL解析为独立的片段。</li>
 </ul>
 <a id="more"></a>
 <blockquote>
@@ -345,22 +246,22 @@
 </tr>
 <tr>
 <td>host</td>
-<td>“www.qxy.com:80”</td>
+<td>“<a href="http://www.qxy.com:80" target="_blank" rel="noopener">www.qxy.com:80</a>”</td>
 <td>返回服务器名称和端口号（如果有）</td>
 </tr>
 <tr>
 <td>hostname</td>
-<td>“www.qxy.com”</td>
+<td>“<a href="http://www.qxy.com" target="_blank" rel="noopener">www.qxy.com</a>”</td>
 <td>返回不带端口号的服务器名称</td>
 </tr>
 <tr>
 <td>href</td>
-<td>“<a href="http://www.qxy.com" target="_blank" rel="external">http://www.qxy.com</a>“</td>
+<td>“<a href="http://www.qxy.com" target="_blank" rel="noopener">http://www.qxy.com</a>”</td>
 <td>返回当前加载页面的完整URL。而location对象的toString()方法也返回这个值</td>
 </tr>
 <tr>
 <td>pathname</td>
-<td>“/blog/“</td>
+<td>“/blog/”</td>
 <td>返回URL中的目录和（或）文件名</td>
 </tr>
 <tr>
@@ -380,397 +281,346 @@
 </tr>
 </tbody>
 </table>
-<h4 id="查询字符串参数"><a href="#查询字符串参数" class="headerlink" title="查询字符串参数"></a>查询字符串参数</h4><p>虽然通过上面的属性可以访问到location 对象的大多数信息，但其中访问URL 包含的查询字符<br>串的属性并不方便。尽管location.search 返回从问号到URL 末尾的所有内容，但却没有办法逐个<br>访问其中的每个查询字符串参数。为此，可以像下面这样创建一个函数，用以解析查询字符串，然后返<br>回包含所有参数的一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">function getQueryStringArgs()&#123;</div><div class="line">    //取得查询字符串并去掉开头的问号</div><div class="line">    var qs = (location.search.length &gt; 0 ? location.search.substring(1) : &quot;&quot; ),</div><div class="line">        //保存数据的对象</div><div class="line">        args = &#123;&#125;,</div><div class="line">        //取得每一项</div><div class="line">        items = qs.length ? qs.split(&apos;&amp;&apos;) : [],</div><div class="line">        item = null,</div><div class="line">        name = null,</div><div class="line">        value = null,</div><div class="line">        //在for循环中使用</div><div class="line">        i = 0,</div><div class="line">        len = items.length;</div><div class="line">        </div><div class="line">    //逐个将每一项添加到args对象中</div><div class="line">    </div><div class="line">    for(i = 0;i &lt; len; i++)&#123;</div><div class="line">        item = items[i].split(&apos;:&apos;);</div><div class="line">        name = decodeURIComponent(item[0]);</div><div class="line">        value = decodeURIComponent(item[1]);</div><div class="line">        </div><div class="line">        if(name.length)&#123;</div><div class="line">            args[name] = value;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return args;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h4><p>使用location 对象可以通过很多方式来改变浏览器的位置。首先，也是最常用的方式，就是使用<br>assign()方法并为其传递一个URL，如下所示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.assign(&quot;http://www.qxy.com&quot;);</div></pre></td></tr></table></figure></p>
-<p>这样，就可以立即打开新URL 并在浏览器的历史记录中生成一条记录。如果是将<code>location.href</code><br>或<code>window.location</code> 设置为一个URL 值，也会以该值调用<code>assign()</code>方法。例如，下列两行代码与<br>显式调用<code>assign()</code>方法的效果完全一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.location = &quot;http://www.wrox.com&quot;;</div><div class="line">location.href = &quot;http://www.wrox.com&quot;;</div></pre></td></tr></table></figure></p>
+<h4><span id="查询字符串参数">查询字符串参数</span></h4>
+<p>虽然通过上面的属性可以访问到location 对象的大多数信息，但其中访问URL 包含的查询字符<br>
+串的属性并不方便。尽管location.search 返回从问号到URL 末尾的所有内容，但却没有办法逐个<br>
+访问其中的每个查询字符串参数。为此，可以像下面这样创建一个函数，用以解析查询字符串，然后返<br>
+回包含所有参数的一个对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getQueryStringArgs</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//取得查询字符串并去掉开头的问号</span></span><br><span class="line">    <span class="keyword">var</span> qs = (location.search.length &gt; <span class="number">0</span> ? location.search.substring(<span class="number">1</span>) : <span class="string">""</span> ),</span><br><span class="line">        <span class="comment">//保存数据的对象</span></span><br><span class="line">        args = &#123;&#125;,</span><br><span class="line">        <span class="comment">//取得每一项</span></span><br><span class="line">        items = qs.length ? qs.split(<span class="string">'&amp;'</span>) : [],</span><br><span class="line">        item = <span class="literal">null</span>,</span><br><span class="line">        name = <span class="literal">null</span>,</span><br><span class="line">        value = <span class="literal">null</span>,</span><br><span class="line">        <span class="comment">//在for循环中使用</span></span><br><span class="line">        i = <span class="number">0</span>,</span><br><span class="line">        len = items.length;</span><br><span class="line">        </span><br><span class="line">    <span class="comment">//逐个将每一项添加到args对象中</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; len; i++)&#123;</span><br><span class="line">        item = items[i].split(<span class="string">':'</span>);</span><br><span class="line">        name = <span class="built_in">decodeURIComponent</span>(item[<span class="number">0</span>]);</span><br><span class="line">        value = <span class="built_in">decodeURIComponent</span>(item[<span class="number">1</span>]);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(name.length)&#123;</span><br><span class="line">            args[name] = value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> args;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="位置操作">位置操作</span></h4>
+<p>使用location 对象可以通过很多方式来改变浏览器的位置。首先，也是最常用的方式，就是使用<br>
+assign()方法并为其传递一个URL，如下所示。</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.assign(<span class="string">"http://www.qxy.com"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>这样，就可以立即打开新URL 并在浏览器的历史记录中生成一条记录。如果是将<code>location.href</code><br>
+或<code>window.location</code> 设置为一个URL 值，也会以该值调用<code>assign()</code>方法。例如，下列两行代码与<br>
+显式调用<code>assign()</code>方法的效果完全一样。</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.location = <span class="string">"http://www.wrox.com"</span><span class="comment">;</span></span><br><span class="line">location.href = <span class="string">"http://www.wrox.com"</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p>在这些改变浏览器位置的方法中，最常用的是设置<code>location.href</code>属性。</p>
-<p>修改location 对象的其他属性也可以改变当前加载的页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//假设初始URL 为http://www.wrox.com/WileyCDA/</div><div class="line">//将URL 修改为&quot;http://www.wrox.com/WileyCDA/#section1&quot;</div><div class="line">location.hash = &quot;#section1&quot;;</div><div class="line">//将URL 修改为&quot;http://www.wrox.com/WileyCDA/?q=javascript&quot;</div><div class="line">location.search = &quot;?q=javascript&quot;;</div><div class="line">//将URL 修改为&quot;http://www.yahoo.com/WileyCDA/&quot;</div><div class="line">location.hostname = &quot;www.yahoo.com&quot;;</div><div class="line">//将URL 修改为&quot;http://www.yahoo.com/mydir/&quot;</div><div class="line">location.pathname = &quot;mydir&quot;;</div><div class="line">//将URL 修改为&quot;http://www.yahoo.com:8080/WileyCDA/&quot;</div><div class="line">location.port = 8080;</div></pre></td></tr></table></figure></p>
+<p>修改location 对象的其他属性也可以改变当前加载的页面</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span>假设初始URL 为http:<span class="regexp">//</span>www.wrox.com<span class="regexp">/WileyCDA/</span></span><br><span class="line"><span class="regexp">//</span>将URL 修改为<span class="string">"http://www.wrox.com/WileyCDA/#section1"</span></span><br><span class="line">location.hash = <span class="string">"#section1"</span>;</span><br><span class="line"><span class="regexp">//</span>将URL 修改为<span class="string">"http://www.wrox.com/WileyCDA/?q=javascript"</span></span><br><span class="line">location.search = <span class="string">"?q=javascript"</span>;</span><br><span class="line"><span class="regexp">//</span>将URL 修改为<span class="string">"http://www.yahoo.com/WileyCDA/"</span></span><br><span class="line">location.hostname = <span class="string">"www.yahoo.com"</span>;</span><br><span class="line"><span class="regexp">//</span>将URL 修改为<span class="string">"http://www.yahoo.com/mydir/"</span></span><br><span class="line">location.pathname = <span class="string">"mydir"</span>;</span><br><span class="line"><span class="regexp">//</span>将URL 修改为<span class="string">"http://www.yahoo.com:8080/WileyCDA/"</span></span><br><span class="line">location.port = <span class="number">8080</span>;</span><br></pre></td></tr></table></figure>
 <p>每次修改location 的属性（hash 除外），页面都会以新URL 重新加载。</p>
 <blockquote>
-<p>在IE8、Firefox 1、Safari 2+、Opera 9+和Chrome 中，修改hash 的值会在浏览<br>器的历史记录中生成一条新记录。在IE 的早期版本中，hash 属性不会在用户单击“后<br>退”和“前进”按钮时被更新，而只会在用户单击包含hash 的URL 时才会被更新。</p>
-<p>replace()方法。这个方法<br>只接受一个参数，即要导航到的URL；结果虽然会导致浏览器位置改变，但不会在历史记录中生成新记<br>录。在调用replace()方法之后，用户不能回到前一个页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeout(function () &#123;</div><div class="line">location.replace(&quot;http://www.wrox.com/&quot;);</div><div class="line">&#125;, 1000);</div></pre></td></tr></table></figure></p>
+<p>在IE8、Firefox 1、Safari 2+、Opera 9+和Chrome 中，修改hash 的值会在浏览<br>
+器的历史记录中生成一条新记录。在IE 的早期版本中，hash 属性不会在用户单击“后<br>
+退”和“前进”按钮时被更新，而只会在用户单击包含hash 的URL 时才会被更新。</p>
+</blockquote>
+<blockquote>
+<p>replace()方法。这个方法<br>
+只接受一个参数，即要导航到的URL；结果虽然会导致浏览器位置改变，但不会在历史记录中生成新记<br>
+录。在调用replace()方法之后，用户不能回到前一个页面</p>
+</blockquote>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="name">function</span> () &#123;</span><br><span class="line">location.replace(<span class="string">"http://www.wrox.com/"</span>)<span class="comment">;</span></span><br><span class="line">&#125;, <span class="number">1000</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>reload()，作用是重新加载当前显示的页面</p>
 </blockquote>
-<p>如果调用reload()<br>时不传递任何参数，页面就会以最有效的方式重新加载。也就是说，如果页面自上次请求以来并没有改<br>变过，页面就会从浏览器缓存中重新加载。如果要强制从服务器重新加载，则需要像下面这样为该方法<br>传递参数true。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">location.reload(); //重新加载（有可能从缓存中加载）</div><div class="line">location.reload(true); //重新加载（从服务器重新加载）</div></pre></td></tr></table></figure></p>
-<p>位于reload()调用之后的代码可能会也可能不会执行，这要取决于网络延迟或系统资源等因素。<br>为此，最好将reload()放在代码的最后一行。</p>
+<p>如果调用reload()<br>
+时不传递任何参数，页面就会以最有效的方式重新加载。也就是说，如果页面自上次请求以来并没有改<br>
+变过，页面就会从浏览器缓存中重新加载。如果要强制从服务器重新加载，则需要像下面这样为该方法<br>
+传递参数true。</p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">location</span>.reload(); <span class="comment">//重新加载（有可能从缓存中加载）</span></span><br><span class="line"><span class="keyword">location</span>.reload(<span class="literal">true</span>); <span class="comment">//重新加载（从服务器重新加载）</span></span><br></pre></td></tr></table></figure>
+<p>位于reload()调用之后的代码可能会也可能不会执行，这要取决于网络延迟或系统资源等因素。<br>
+为此，最好将reload()放在代码的最后一行。</p>
 
-      
-    </div>
+                
 
-    <div>
-      
-        
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/06/07/cartoon Redux/" data-toggle="tooltip" data-placement="top" title="《看漫画，学Redux》[转载]">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/05/09/函数表达式/" data-toggle="tooltip" data-placement="top" title="函数表达式">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-      
-    </div>
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
 
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="yuzexia WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="yuzexia Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
 
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
-            <a href="/tags/object/" rel="tag"># object</a>
-          
-            <a href="/tags/location/" rel="tag"># location</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/05/09/函数表达式/" rel="next" title="函数表达式">
-                <i class="fa fa-chevron-left"></i> 函数表达式
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/07/cartoon Redux/" rel="prev" title="《看漫画，学Redux》[转载]">
-                《看漫画，学Redux》[转载] <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="yuzexia" />
-          <p class="site-author-name" itemprop="name">yuzexia</p>
-           
-              <p class="site-description motion-element" itemprop="description">前端, JavaScript, Html, Css</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">Artikel</span>
-              </a>
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
             </div>
-          
-
-          
-
-          
             
-            
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">Tags</span>
-              
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                        
+                          <a class="tag" href="/tags/#object" title="object">object</a>
+                        
+                          <a class="tag" href="/tags/#location" title="location">location</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://www.w3cplus.com/" target="_blank">w3cplus</a></li>
+                    
+                        <li><a href="https://qianduan.group/" target="_blank">前端外刊评论</a></li>
+                    
+                        <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
+                    
+                </ul>
+                
             </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询字符串参数"><span class="nav-number">1.</span> <span class="nav-text">查询字符串参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位置操作"><span class="nav-number">2.</span> <span class="nav-text">位置操作</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
     </div>
-  </aside>
+</article>
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yuzexia</span>
-</div>
 
 
-<div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
-
+<!-- disqus embedded js code start (one page only need to embed once) -->
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "your-disqus-ID";
+    var disqus_identifier = "https://yuzexia.github.io/2017/05/09/Location-Object/";
+    var disqus_url = "https://yuzexia.github.io/2017/05/09/Location-Object/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/white_quality">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/whiteQuality">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://github.com/yuzexia">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; yuze xia 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a> | 
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=YenYuHsuan&repo=hexo-theme-beantech&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://yuzexia.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
 </script>
 
 
 
 
+<!-- Baidu Tongji -->
 
 
 
 
 
-  
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://yuzexia.github.io/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 ---
-title: 'string-function.md'
+title: 'string-function'
 date: 2017-09-22 09:58:05
 tags: [javascript, string]
 ---
